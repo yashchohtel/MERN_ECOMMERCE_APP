@@ -1,5 +1,6 @@
 import mongoose from "mongoose"; // Import mongoose
 
+// product schema
 const productSchema = new mongoose.Schema({
 
     // name
@@ -84,11 +85,6 @@ const productSchema = new mongoose.Schema({
             }
         }
     ]
-
-
-
-    
-
 
 }, { timestamps: true })
 
