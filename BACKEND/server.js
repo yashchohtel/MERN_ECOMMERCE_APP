@@ -23,10 +23,6 @@ connectDB();
 
 // -------------------- ROUTES -------------------- //
 
-// dummy route
-app.get('/', (req, res) => {
-    res.send('API is running...');
-});
 
 // -------------------- SERVER -------------------- //
 
