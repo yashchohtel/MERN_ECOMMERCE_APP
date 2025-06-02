@@ -2,6 +2,8 @@
 import express from "express"; // Express framework for building APIs
 import dotenv from "dotenv"; // Import dotenv for environment variables
 import connectDB from "./config/dataBase.js"; // Import the function to connect to MongoDB
+import productRouter from "./routes/productRoutes.js";
+import errorMiddleware from "./middleware/error.js";
 
 // -------------------- CONFIGURATION  -------------------- //
 
@@ -23,6 +25,12 @@ connectDB();
 
 // -------------------- ROUTES -------------------- //
 
+// User routes `/api/auth`
+app.use("/api/products", productRouter); // Use productRouter for user-related routes
+
+// -------------------- ERROR MIDDLEWARE -------------------- //
+
+app.use(errorMiddleware); // Use error handling middleware
 
 // -------------------- SERVER -------------------- //
 
