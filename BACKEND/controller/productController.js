@@ -4,16 +4,17 @@ import ErrorHandler from "../utils/errorHandler.js";
 // CREATE PRODUCT ------------------------------ //
 export const createProduct = async (req, res, next) => {
 
+    // getting product from request body
     const productDetails = req.body;
 
+    // if no details found
     if (!productDetails) {
         return next(new ErrorHandler("Please enter product details", 404));
     }
 
-    // createe a new product
+    // createe a new product and save
     const product = new Products(productDetails);
     await product.save();
-
 
     // logs for debugging remove in production
     if (process.env.NODE_ENV === "development") {
@@ -22,15 +23,18 @@ export const createProduct = async (req, res, next) => {
         console.log('↑--- createProduct controller ---↑');
     }
 
+    // sending response for sucess
     res.status(201).json({ success: true, product });
 
 };
 
-// GET ALL PRODUCT ------------------------------ //
+// GET ALL PRODUCTS ------------------------------ //
 export const getAllProducts = async (req, res) => {
 
+    // getting all product 
     const products = await Products.find();
 
+    // if no product found
     if (!products) {
         return next(new ErrorHandler("No Products Found", 404));
     }
@@ -42,35 +46,93 @@ export const getAllProducts = async (req, res) => {
         console.log('↑--- getAllProducts controller ---↑');
     }
 
-
+    // sending response for sucess
     res.status(200).json({ success: true, products });
 
 };
 
-export const updateProduct = async (req, res, next) => {
-    try {
-        const { id } = req.params;
-        let product = await Products.findById(id);
+// GET SINGLE PRODUCT
+export const getSingleProduct = async (req, res, next) => {
 
-        if (!product) {
-            return next(new ErrorHandler("Product not found", 404));
-        }
+    // getting product id from reqest param 
+    const { id } = req.params;
 
-        product = await Products.findByIdAndUpdate(id, req.body, {
-            new: true,
-            runValidators: true,
-            useFindAndModify: false
-        });
+    // getting product
+    const product = await Products.findById(id);
 
-        // logs for debugging remove in production
-        if (process.env.NODE_ENV === "development") {
-            console.log('↓--- updateProduct controller ---↓');
-            console.log(product)
-            console.log('↑--- updateProduct controller ---↑');
-        }
-
-        res.status(200).json({ success: true, product });
-    } catch (error) {
-        next(error);
+    // if no product found
+    if (!product) {
+        return next(new ErrorHandler("Product not found", 404));
     }
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- getSingleProduct controller ---↓');
+        console.log(product);
+        console.log('↑--- getSingleProduct controller ---↑');
+    }
+
+    // sending response for sucess
+    res.status(200).json({ success: true, product });
 };
+
+// UPDATE PRODUCT ------------------------------ //
+export const updateProduct = async (req, res, next) => {
+
+    // getting product id from reqest param 
+    const { id } = req.params;
+
+    // getting the product
+    let product = await Products.findById(id);
+
+    // if no product found
+    if (!product) {
+        return next(new ErrorHandler("Product not found", 404));
+    }
+
+    // updating product
+    product = await Products.findByIdAndUpdate(id, req.body, {
+        new: true,
+        runValidators: true,
+        useFindAndModify: false
+    });
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- updateProduct controller ---↓');
+        console.log(product)
+        console.log('↑--- updateProduct controller ---↑');
+    }
+
+    // sending response for sucess
+    res.status(200).json({ success: true, product });
+
+};
+
+// DELETE PRODUCT ------------------------------ //
+export const deleteProduct = async (req, res, next) => {
+
+    // getting product id from reqest param 
+    const { id } = req.params;
+
+    // getting product
+    const product = await Products.findById(id);
+
+    // if no product found
+    if (!product) {
+        return next(new ErrorHandler("Product not found", 404));
+    }
+
+    // deleting product
+    await product.deleteOne();
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- deleteProduct controller ---↓');
+        console.log(product);
+        console.log('↑--- deleteProduct controller ---↑');
+    }
+
+    // sending response for sucess
+    res.status(200).json({ success: true, message: "Product deleted successfully" });
+}; 
