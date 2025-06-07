@@ -7,7 +7,8 @@
 
 
 import Products from "../models/productModel.js"; // Products model to work with products
-import ErrorHandler from "../utils/errorHandler.js";
+import ApiFeatures from "../utils/apiFeatures.js"; // api features class to handle query operations
+import ErrorHandler from "../utils/errorHandler.js"; // error handler class to handle errors
 
 // CREATE PRODUCT ------------------------------ //
 export const createProduct = async (req, res, next) => {
@@ -38,6 +39,9 @@ export const createProduct = async (req, res, next) => {
 
 // GET ALL PRODUCTS ------------------------------ //
 export const getAllProducts = async (req, res) => {
+
+    // Initializes ApiFeatures with a Mongoose query and request query parameters
+    const apiFeature = new ApiFeatures(Products.find(), req.query);
 
     // getting all product 
     const products = await Products.find();
