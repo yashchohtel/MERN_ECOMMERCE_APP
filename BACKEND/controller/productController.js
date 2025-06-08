@@ -137,4 +137,6 @@ export const deleteProduct = async (req, res, next) => {
 
     // sending response for sucess
     res.status(200).json({ success: true, message: "Product deleted successfully" });
+
+
 }; 
