@@ -41,10 +41,12 @@ export const createProduct = async (req, res, next) => {
 export const getAllProducts = async (req, res) => {
 
     // Initializes ApiFeatures with a Mongoose query and request query parameters
-    const apiFeature = new ApiFeatures(Products.find(), req.query);
-
+    const apiFeature = new ApiFeatures(Products.find(), req.query).search(); 
+    
+    console.log(req.query);
+    
     // getting all product 
-    const products = await Products.find();
+    const products = await apiFeature.query;
 
     // if no product found
     if (!products) {

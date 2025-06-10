@@ -1,6 +1,7 @@
 import express from "express"; // Express framework for building APIs
 import { createProduct, deleteProduct, getAllProducts, getSingleProduct, updateProduct } from "../controller/productController.js";
 import catchAsyncError from "../middleware/catchAsyncError.js";
+import Products from "../models/productModel.js";
 
 const productRouter = express.Router(); // Creating an instance of Express Router
 
