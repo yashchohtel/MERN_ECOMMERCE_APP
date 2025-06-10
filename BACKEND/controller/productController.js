@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import Products from "../models/productModel.js"; // Products model to work with products
 import ApiFeatures from "../utils/apiFeatures.js"; // api features class to handle query operations
 import ErrorHandler from "../utils/errorHandler.js"; // error handler class to handle errors
