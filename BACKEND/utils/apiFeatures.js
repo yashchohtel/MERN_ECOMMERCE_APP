@@ -50,9 +50,3 @@ class ApiFeatures {
 };
 
 export default ApiFeatures; // exporting apiFeatures class 
-
-// here is the apiFeatures class which is used to handle query operations
-// it has two methods search and filter
-
-
-// the search method is used to search products by name
