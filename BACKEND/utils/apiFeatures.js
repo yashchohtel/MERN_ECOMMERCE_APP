@@ -61,16 +61,3 @@ class ApiFeatures {
 
 export default ApiFeatures; // exporting apiFeatures class 
 
-/**
- * Example usage:
- * 
- * import ApiFeatures from './utils/apiFeatures.js';
- * 
- * // Suppose Product is a Mongoose model
- * const apiFeatures = new ApiFeatures(Product.find(), req.query)
- *   .search()
- *   .filter()
- *   .pagination(10);
- * 
- * const products = await apiFeatures.query;
- */
