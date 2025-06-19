@@ -60,8 +60,3 @@ class ApiFeatures {
 };
 
 export default ApiFeatures; // exporting apiFeatures class 
-
-
-
-
-
