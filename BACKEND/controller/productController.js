@@ -149,8 +149,6 @@ export const deleteProduct = async (req, res, next) => {
 
 }; 
 
-// files end here fiels end here again
-
 
 
 
