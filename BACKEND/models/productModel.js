@@ -93,6 +93,3 @@ const Products = mongoose.model("Products", productSchema);
 
 // Export the products model
 export default Products;
-
-
-

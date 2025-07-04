@@ -22,14 +22,4 @@ productRouter.put('/updateProduct/:id', catchAsyncError(updateProduct)); // 'htt
 // Update product route [DELETE]
 productRouter.delete('/deleteProduct/:id', catchAsyncError(deleteProduct)); // 'http://localhost:3000/api/products/deleteProduct/:id'
 
-
-
-
-
-
-
-
-
-
-
 export default productRouter; // export product router

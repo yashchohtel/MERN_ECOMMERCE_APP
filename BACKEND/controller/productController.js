@@ -2,10 +2,6 @@ import Products from "../models/productModel.js"; // Products model to work with
 import ApiFeatures from "../utils/apiFeatures.js"; // api features class to handle query operations
 import ErrorHandler from "../utils/errorHandler.js"; // error handler class to handle errors
 
-
-
-
-
 // CREATE PRODUCT ------------------------------ //
 export const createProduct = async (req, res, next) => {
 
@@ -145,7 +141,6 @@ export const deleteProduct = async (req, res, next) => {
 
     // sending response for sucess
     res.status(200).json({ success: true, message: "Product deleted successfully" });
-
 
 }; 
 
