@@ -4,7 +4,6 @@ import ErrorHandler from "../utils/errorHandler.js"; // error handler class to h
 
 // CREATE PRODUCT ------------------------------ //
 export const createProduct = async (req, res, next) => {
-
     // getting product from request body
     const productDetails = req.body;
 
@@ -19,25 +18,22 @@ export const createProduct = async (req, res, next) => {
 
     // logs for debugging remove in production
     if (process.env.NODE_ENV === "development") {
-        console.log('↓--- createProduct controller ---↓');
-        console.log(product)
-        console.log('↑--- createProduct controller ---↑');
+        console.log("↓--- createProduct controller ---↓");
+        console.log(product);
+        console.log("↑--- createProduct controller ---↑");
     }
 
     // sending response for sucess
     res.status(201).json({ success: true, product });
-
 };
 
 // GET ALL PRODUCTS ------------------------------ //
 export const getAllProducts = async (req, res) => {
 
     // Initializes ApiFeatures with a Mongoose query and request query parameters
-    const apiFeature = new ApiFeatures(Products.find(), req.query).search(); 
-    
-    console.log(req.query);
-    
-    // getting all product 
+    const apiFeature = new ApiFeatures(Products.find(), req.query).search().filter();
+
+    // getting all product
     const products = await apiFeature.query;
 
     // if no product found
@@ -47,20 +43,18 @@ export const getAllProducts = async (req, res) => {
 
     // logs for debugging remove in production
     if (process.env.NODE_ENV === "development") {
-        console.log('↓--- getAllProducts controller ---↓');
-        console.log(products)
-        console.log('↑--- getAllProducts controller ---↑');
+        console.log("↓--- getAllProducts controller ---↓");
+        console.log(products);
+        console.log("↑--- getAllProducts controller ---↑");
     }
 
     // sending response for sucess
     res.status(200).json({ success: true, products });
-
 };
 
 // GET SINGLE PRODUCT
 export const getSingleProduct = async (req, res, next) => {
-
-    // getting product id from reqest param 
+    // getting product id from reqest param
     const { id } = req.params;
 
     // getting product
@@ -73,9 +67,9 @@ export const getSingleProduct = async (req, res, next) => {
 
     // logs for debugging remove in production
     if (process.env.NODE_ENV === "development") {
-        console.log('↓--- getSingleProduct controller ---↓');
+        console.log("↓--- getSingleProduct controller ---↓");
         console.log(product);
-        console.log('↑--- getSingleProduct controller ---↑');
+        console.log("↑--- getSingleProduct controller ---↑");
     }
 
     // sending response for sucess
@@ -84,8 +78,7 @@ export const getSingleProduct = async (req, res, next) => {
 
 // UPDATE PRODUCT ------------------------------ //
 export const updateProduct = async (req, res, next) => {
-
-    // getting product id from reqest param 
+    // getting product id from reqest param
     const { id } = req.params;
 
     // getting the product
@@ -100,25 +93,24 @@ export const updateProduct = async (req, res, next) => {
     product = await Products.findByIdAndUpdate(id, req.body, {
         new: true,
         runValidators: true,
-        useFindAndModify: false
+        useFindAndModify: false,
     });
 
     // logs for debugging remove in production
     if (process.env.NODE_ENV === "development") {
-        console.log('↓--- updateProduct controller ---↓');
-        console.log(product)
-        console.log('↑--- updateProduct controller ---↑');
+        console.log("↓--- updateProduct controller ---↓");
+        console.log(product);
+        console.log("↑--- updateProduct controller ---↑");
     }
 
     // sending response for sucess
     res.status(200).json({ success: true, product });
-
 };
 
 // DELETE PRODUCT ------------------------------ //
 export const deleteProduct = async (req, res, next) => {
 
-    // getting product id from reqest param 
+    // getting product id from reqest param
     const { id } = req.params;
 
     // getting product
@@ -134,17 +126,13 @@ export const deleteProduct = async (req, res, next) => {
 
     // logs for debugging remove in production
     if (process.env.NODE_ENV === "development") {
-        console.log('↓--- deleteProduct controller ---↓');
+        console.log("↓--- deleteProduct controller ---↓");
         console.log(product);
-        console.log('↑--- deleteProduct controller ---↑');
+        console.log("↑--- deleteProduct controller ---↑");
     }
 
     // sending response for sucess
-    res.status(200).json({ success: true, message: "Product deleted successfully" });
-
-}; 
-
-
-
-
-                                                        
+    res
+        .status(200)
+        .json({ success: true, message: "Product deleted successfully" });
+};
