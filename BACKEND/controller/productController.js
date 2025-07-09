@@ -30,8 +30,14 @@ export const createProduct = async (req, res, next) => {
 // GET ALL PRODUCTS ------------------------------ //
 export const getAllProducts = async (req, res) => {
 
+    // results per page for pagination
+    const resultsPerPage = 10;
+
+    // products count for pagination
+    const productsCount = await Products.countDocuments();
+
     // Initializes ApiFeatures with a Mongoose query and request query parameters
-    const apiFeature = new ApiFeatures(Products.find(), req.query).search().filter();
+    const apiFeature = new ApiFeatures(Products.find(), req.query).search().filter().pagination(resultsPerPage);
 
     // getting all product
     const products = await apiFeature.query;
@@ -49,7 +55,11 @@ export const getAllProducts = async (req, res) => {
     }
 
     // sending response for sucess
-    res.status(200).json({ success: true, products });
+    res.status(200).json({
+        success: true,
+        products,
+        productsCount,
+    });
 };
 
 // GET SINGLE PRODUCT

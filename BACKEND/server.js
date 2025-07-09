@@ -17,6 +17,7 @@ const app = express();
 
 // Enable JSON parsing for request bodies
 app.use(express.json());
+app.set('query parser', 'extended');
 
 // -------------------- CONNECT TO MONDODB -------------------- //
 
