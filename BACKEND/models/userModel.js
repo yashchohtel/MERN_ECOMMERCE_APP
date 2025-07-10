@@ -1,5 +1,7 @@
 import mongoose from "mongoose"; // Import mongoose
 import validator from "validator"; // Import validator
+import bcrypt from "bcrypt"; // Import bcrypt for password hashing
+import jwt from "jsonwebtoken"; // Import JWT for authentication
 
 // user schema
 const userSchema = new mongoose.Schema({
@@ -25,7 +27,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: [true, "Please enter your password"],
-        minlength: [8, "Password must be at least 6 characters"],
+        minlength: [8, "Password must be at least 8 characters"],
         select: false, // Do not return password in queries
     },
 
@@ -60,6 +62,30 @@ const userSchema = new mongoose.Schema({
     },
 
 }, { timestamps: true });
+
+// Pre-save hook to hash the password before saving
+userSchema.pre("save", async function (next) {
+
+    if (!this.isModified("password")) return next(); // Only hash if password is modified
+
+    // Hash the password before storing it in the database
+    this.password = await bcrypt.hash(this.password, 10);
+
+    next();
+
+});
+
+// Creating a JWT token for the user
+userSchema.methods.getJwtToken = function () {
+
+    return jwt.sign({ id: this._id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRE })
+
+}
+
+// Method to compare passwords
+userSchema.methods.comparePassword = async function (enteredPassword) {
+    return await bcrypt.compare(enteredPassword, this.password); // Compare entered password with hashed password
+}
 
 // Create a user model
 const Users = mongoose.model("Users", userSchema);
