@@ -4,8 +4,11 @@ import ErrorHandler from "../utils/errorHandler.js"; // error handler class to h
 
 // CREATE PRODUCT ------------------------------ //
 export const createProduct = async (req, res, next) => {
+
     // getting product from request body
     const productDetails = req.body;
+
+    console.log("controller", req.user);
 
     // if no details found
     if (!productDetails) {

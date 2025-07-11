@@ -84,3 +84,27 @@ export const loginUser = async (req, res, next) => {
 
 }
 
+// LOGOUT USER ------------------------------ //
+export const logoutUser = async (req, res, next) => {
+
+    // Clear the cookie by setting it to an empty value and a past expiration date
+    res.cookie("token", null, {
+        expires: new Date(Date.now()),
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production" // Use secure cookies in production
+    });
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- logout controller ---↓');
+        console.log("User logged out successfully");
+        console.log('↑--- logout controller ---↑');
+    }
+
+    // Return success response
+    res.status(200).json({
+        success: true,
+        message: "Logged out successfully"
+    });
+
+}
