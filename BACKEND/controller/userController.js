@@ -1,4 +1,4 @@
-import Users from "../models/userModel.js";
+import Users from "../models/userModel.js"; // user model to interact with user data
 import ErrorHandler from "../utils/errorHandler.js"; // error handler class to handle errors
 import { sendToken } from "../utils/jwtToken.js"; // send token function to send token
 
@@ -83,3 +83,4 @@ export const loginUser = async (req, res, next) => {
     sendToken(user, 200, res);
 
 }
+

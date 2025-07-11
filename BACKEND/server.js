@@ -5,6 +5,7 @@ import connectDB from "./config/dataBase.js"; // Import the function to connect 
 import productRouter from "./routes/productRoutes.js"; // Import product routes
 import userRouter from "./routes/userRoutes.js"; // Import user routes
 import errorMiddleware from "./middleware/error.js"; // Import error handling middleware
+import cookieParser from "cookie-parser"; // Import cookieParser to handle cookies
 
 // -------------------- CONFIGURATION  -------------------- //
 
@@ -19,6 +20,9 @@ const app = express();
 // Enable JSON parsing for request bodies
 app.use(express.json());
 app.set('query parser', 'extended');
+
+// Middleware to parse cookies from incoming requests
+app.use(cookieParser());
 
 // -------------------- CONNECT TO MONDODB -------------------- //
 

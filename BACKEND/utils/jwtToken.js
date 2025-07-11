@@ -7,8 +7,8 @@ export const sendToken = (user, statusCode, res) => {
 
     // options for cookie
     const options = {
-        expires: new Date(Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000), // cookie expiration time
         httpOnly: true, // cookie is not accessible via JavaScript
+        maxAge: 7 * 24 * 60 * 60 * 1000 // Cookie expires in 7 days
     }
 
     res.status(statusCode).cookie("token", token, options).json({
