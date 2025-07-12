@@ -16,7 +16,11 @@ export const createProduct = async (req, res, next) => {
     }
 
     // createe a new product and save
-    const product = new Products(productDetails);
+    const product = new Products({
+        ...productDetails,
+        creator: req.user._id, // setting the creator of the product
+    });
+    
     await product.save();
 
     // logs for debugging remove in production

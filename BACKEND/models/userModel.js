@@ -2,6 +2,7 @@ import mongoose from "mongoose"; // Import mongoose
 import validator from "validator"; // Import validator
 import bcrypt from "bcrypt"; // Import bcrypt for password hashing
 import jwt from "jsonwebtoken"; // Import JWT for authentication
+import crypto from "crypto"; // Import crypto for generating secure random values
 
 // user schema
 const userSchema = new mongoose.Schema({
@@ -38,7 +39,7 @@ const userSchema = new mongoose.Schema({
     },
 
     // password reset OTP expiration time 
-    passwordResetOtpExpiredAt: {
+    resetPasswordExpiredAt: {
         type: Date,
         default: null
     },

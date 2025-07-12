@@ -108,3 +108,88 @@ export const logoutUser = async (req, res, next) => {
     });
 
 }
+
+// GET USER DETAILS ------------------------------ //
+export const getUserDetails = async (req, res, next) => {
+
+    // Get the user ID from the request object
+    const userId = req.user._id;
+
+    // Find the user by ID
+    const user = await Users.findById(userId).select("-password");
+
+    // If user not found, return error
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- get user details controller ---↓');
+        console.log(`User details retrieved: ${user}`);
+        console.log('↑--- get user details controller ---↑');
+    }
+
+    // Return user details
+    res.status(200).json({
+        success: true,
+        user: {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            avatar: user.avatar,
+            role: user.role
+        }
+    });
+
+}
+
+// UPDATE PASSWORD ------------------------------ //
+export const updatePassword = async (req, res, next) => {
+
+    // Get the user ID from the request object
+    const userId = req.user._id;
+
+    // Get the new password from the request body
+    const { oldPassword, newPassword } = req.body;
+
+    // Check if both passwords are provided
+    if (!oldPassword || !newPassword) {
+        return next(new ErrorHandler("Please provide both old and new passwords", 400));
+    }
+
+    // Find the user by ID
+    const user = await Users.findById(userId).select("+password");
+
+    // If user not found, return error
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    // Check if the old password matches
+    const isOldPasswordMatch = await user.comparePassword(oldPassword);
+
+    console.log(isOldPasswordMatch);
+    
+    if (!isOldPasswordMatch) {
+        return next(new ErrorHandler("Old password is incorrect", 401));
+    }
+
+    // Update the password
+    user.password = newPassword;
+    await user.save();
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- update password controller ---↓');
+        console.log(`Password updated for user: ${user}`);
+        console.log('↑--- update password controller ---↑');
+    }
+
+    // Return success response
+    res.status(200).json({
+        success: true,
+        message: "Password updated successfully"
+    });
+
+};

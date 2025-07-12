@@ -26,8 +26,6 @@ export const isUserAuth = catchAsyncError(async (req, res, next) => {
 
     // attach full user data
     req.user = user; 
-
-    console.log("auth",req.user);
     
     next();
     

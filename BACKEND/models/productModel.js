@@ -23,6 +23,13 @@ const productSchema = new mongoose.Schema({
         maxLength: [8, "price cannot exceed 8 characters"]
     },
 
+    // person who created the product
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Users",
+        required: true,
+    },
+
     // rating
     rating: {
         type: Number,
@@ -68,7 +75,7 @@ const productSchema = new mongoose.Schema({
         {
             user: {
                 type: mongoose.Schema.ObjectId,
-                ref: "User",
+                ref: "Users",
                 required: true
             },
             name: {
