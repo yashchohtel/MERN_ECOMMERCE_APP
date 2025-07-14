@@ -8,10 +8,6 @@ const productRouter = express.Router(); // Creating an instance of Express Route
 
 // PRODUCTS ROUTES -------------------- //
 
-// Create product route [POST]
-productRouter.post('/createProduct', isUserAuth, authorizeRoles("admin"), catchAsyncError(createProduct));
-// 'http://localhost:5000/api/products/createProduct'
-
 // Get product route [GET]
 productRouter.get('/getAllProducts', catchAsyncError(getAllProducts));
 // 'http://localhost:5000/api/products/getAllProducts'
@@ -20,12 +16,16 @@ productRouter.get('/getAllProducts', catchAsyncError(getAllProducts));
 productRouter.get('/getSingleProduct/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(getSingleProduct));
 // 'http://localhost:5000/api/products/getSingleProduct/:id'
 
+// Create product route [POST]
+productRouter.post('/admin/createProduct', isUserAuth, authorizeRoles("admin"), catchAsyncError(createProduct));
+// 'http://localhost:5000/api/products/admin/createProduct'
+
 // Update product route [PUT]
-productRouter.put('/updateProduct/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(updateProduct));
-// 'http://localhost:5000/api/products/updateProduct/:id'
+productRouter.put('/admin/updateProduct/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(updateProduct));
+// 'http://localhost:5000/api/products/admin/updateProduct/:id'
 
 // Update product route [DELETE]
-productRouter.delete('/deleteProduct/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(deleteProduct));
-// 'http://localhost:5000/api/products/deleteProduct/:id'
+productRouter.delete('/admin/deleteProduct/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(deleteProduct));
+// 'http://localhost:5000/api/products/admin/deleteProduct/:id'
 
 export default productRouter; // export product router

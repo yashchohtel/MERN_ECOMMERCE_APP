@@ -150,12 +150,12 @@ export const updatePassword = async (req, res, next) => {
     // Get the user ID from the request object
     const userId = req.user._id;
 
-    // Get the new password from the request body
-    const { oldPassword, newPassword } = req.body;
+    // Get the passwords from the request body
+    const { oldPassword, newPassword, confirmPassword } = req.body;
 
-    // Check if both passwords are provided
-    if (!oldPassword || !newPassword) {
-        return next(new ErrorHandler("Please provide both old and new passwords", 400));
+    // Check if all passwords are provided
+    if (!oldPassword || !newPassword || !confirmPassword) {
+        return next(new ErrorHandler("Please provide old password, new password, and confirm password", 400));
     }
 
     // Find the user by ID
@@ -169,10 +169,13 @@ export const updatePassword = async (req, res, next) => {
     // Check if the old password matches
     const isOldPasswordMatch = await user.comparePassword(oldPassword);
 
-    console.log(isOldPasswordMatch);
-    
     if (!isOldPasswordMatch) {
         return next(new ErrorHandler("Old password is incorrect", 401));
+    }
+
+    // Check if new password and confirm password match
+    if (newPassword !== confirmPassword) {
+        return next(new ErrorHandler("New password and confirm password do not match", 400));
     }
 
     // Update the password
@@ -192,4 +195,57 @@ export const updatePassword = async (req, res, next) => {
         message: "Password updated successfully"
     });
 
+};
+
+// UPDATE PROFILE ------------------------------ //
+export const updateProfile = async (req, res, next) => {
+
+    // Get the user ID from the request object
+    const userId = req.user._id;
+
+    // Get the updated profile details from the request body
+    const { name, email } = req.body;
+
+    // Check if all required fields are provided
+    if (!name || !email) {
+        return next(new ErrorHandler("Please provide name and email", 400));
+    }
+
+    // Check if the new email is already taken by another user
+    const existingUser = await Users.findOne({ email, _id: { $ne: userId } });
+
+    console.log(existingUser);
+    
+    if (existingUser) {
+        return next(new ErrorHandler("Email already in use by another account", 400));
+    }
+
+    // Update user in one query
+    const updatedUser = await Users.findOneAndUpdate(
+        { _id: userId },
+        { name, email },
+        { new: true, runValidators: true }
+    );
+
+    if (!updatedUser) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- update profile controller ---↓');
+        console.log(`Profile updated for user: ${updatedUser}`);
+        console.log('↑--- update profile controller ---↑');
+    }
+
+    res.status(200).json({
+        success: true,
+        message: "Profile updated successfully",
+        user: {
+            id: updatedUser._id,
+            name: updatedUser.name,
+            email: updatedUser.email,
+            avatar: updatedUser.avatar,
+            role: updatedUser.role
+        }
+    });
 };
