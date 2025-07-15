@@ -110,7 +110,7 @@ export const logoutUser = async (req, res, next) => {
 }
 
 // GET USER DETAILS ------------------------------ //
-export const getUserDetails = async (req, res, next) => {
+export const getPersonalDetails = async (req, res, next) => {
 
     // Get the user ID from the request object
     const userId = req.user._id;
@@ -215,7 +215,7 @@ export const updateProfile = async (req, res, next) => {
     const existingUser = await Users.findOne({ email, _id: { $ne: userId } });
 
     console.log(existingUser);
-    
+
     if (existingUser) {
         return next(new ErrorHandler("Email already in use by another account", 400));
     }
@@ -248,4 +248,155 @@ export const updateProfile = async (req, res, next) => {
             role: updatedUser.role
         }
     });
+};
+
+// GET ALL USERS ------------------------------ //
+export const getAllUsers = async (req, res, next) => {
+
+    // Fetch all users from the database
+    const users = await Users.find().select("-password");
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- get all users controller ---↓');
+        console.log(`Total users found: ${users.length}`);
+        console.log('↑--- get all users controller ---↑');
+    }
+
+    // Return the list of users
+    res.status(200).json({
+        success: true,
+        users
+    });
+
+}
+
+// GET USER BY ID ------------------------------ //
+export const getUserById = async (req, res, next) => {
+
+    // Get the user ID from the request parameters
+    const { id } = req.params;
+
+    // Validate id
+    if (!id) {
+        return next(new ErrorHandler("User ID is required", 400));
+    }
+
+    // Find user by id, exclude password
+    const user = await Users.findById(id).select("-password");
+
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- get user by id controller ---↓');
+        console.log(`User details retrieved: ${user}`);
+        console.log('↑--- get user by id controller ---↑');
+    }
+
+    // Return user details
+    res.status(200).json({
+        success: true,
+        user: {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            avatar: user.avatar,
+            role: user.role
+        }
+    });
+};
+
+// UPDATE USER ROLE ------------------------------ //
+export const updateUserRole = async (req, res, next) => {
+
+    // Get the user ID and new role from the request parameters and body
+    const { id } = req.params;
+
+    // Check if the user ID and role are provided
+    const { role } = req.body;
+
+    // Validate input
+    if (!id || !role) {
+        return next(new ErrorHandler("User ID and new role are required", 400));
+    }
+
+    // Only allow 'admin' or 'user' roles for security
+    if (!["admin", "user"].includes(role)) {
+        return next(new ErrorHandler("Invalid role specified", 400));
+    }
+
+    // Find and update user role
+    const user = await Users.findByIdAndUpdate(
+        id,
+        { role },
+        { new: true, runValidators: true }
+    ).select("-password");
+
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- update user role controller ---↓');
+        console.log(`User role updated: ${user}`);
+        console.log('↑--- update user role controller ---↑');
+    }
+
+    // Return success response
+    res.status(200).json({
+        success: true,
+        message: `User role updated to ${role}`,
+        user: {
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            avatar: user.avatar,
+            role: user.role
+        }
+    });
+};
+
+// DELETE USER ------------------------------ //
+export const deleteUser = async (req, res, next) => {
+
+    // Get the user ID from the request parameters
+    const { id } = req.params;
+
+    // Validate id
+    if (!id) {
+        return next(new ErrorHandler("User ID is required", 400));
+    }
+    
+    // check if the user is an owner
+    const user = await Users.findById(id);
+
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    // Check if the user is an owner
+    if (user.isOwner) {
+        return next(new ErrorHandler("Cannot delete the owner", 403));
+    }
+
+    // Delete the user
+    await user.deleteOne();
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- delete user controller ---↓');
+        console.log(`User deleted: ${user}`);
+        console.log('↑--- delete user controller ---↑');
+    }
+
+    // Return success response
+    res.status(200).json({
+        success: true,
+        message: "User deleted successfully"
+    });
+
 };

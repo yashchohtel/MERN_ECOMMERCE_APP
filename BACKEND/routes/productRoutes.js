@@ -8,23 +8,23 @@ const productRouter = express.Router(); // Creating an instance of Express Route
 
 // PRODUCTS ROUTES -------------------- //
 
-// Get product route [GET]
+// Get product [GET]
 productRouter.get('/getAllProducts', catchAsyncError(getAllProducts));
 // 'http://localhost:5000/api/products/getAllProducts'
 
-// Get single product route [GET]
+// Get single product [GET]
 productRouter.get('/getSingleProduct/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(getSingleProduct));
 // 'http://localhost:5000/api/products/getSingleProduct/:id'
 
-// Create product route [POST]
+// Create product [POST] -- Admin only
 productRouter.post('/admin/createProduct', isUserAuth, authorizeRoles("admin"), catchAsyncError(createProduct));
 // 'http://localhost:5000/api/products/admin/createProduct'
 
-// Update product route [PUT]
+// Update product [PUT] -- Admin only
 productRouter.put('/admin/updateProduct/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(updateProduct));
 // 'http://localhost:5000/api/products/admin/updateProduct/:id'
 
-// Update product route [DELETE]
+// Update product [DELETE] -- Admin only
 productRouter.delete('/admin/deleteProduct/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(deleteProduct));
 // 'http://localhost:5000/api/products/admin/deleteProduct/:id'
 

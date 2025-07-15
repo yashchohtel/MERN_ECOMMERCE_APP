@@ -59,8 +59,15 @@ const userSchema = new mongoose.Schema({
     // role
     role: {
         type: String,
+        enum: ["user", "admin"],
         default: "user",
     },
+
+    // is owner
+    isOwner: {
+        type: Boolean,
+        default: false
+    }
 
 }, { timestamps: true });
 

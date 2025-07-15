@@ -5,8 +5,6 @@ export const authorizeRoles = (...roles) => {
 
     return (req, res, next) => {
 
-        console.log("role", req.user);
-
         // Check if the user has the required role
         if (!roles.includes(req.user.role)) {
 
