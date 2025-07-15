@@ -48,4 +48,8 @@ userRouter.put('/admin/promoteUserToAdmin/:id', isUserAuth, authorizeRoles("admi
 userRouter.delete('/admin/deleteUser/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(deleteUser));
 // 'http://localhost:5000/api/users/admin/deleteUser/:id'
 
+
+
+
+
 export default userRouter; // export product router
