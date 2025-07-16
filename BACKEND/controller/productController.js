@@ -20,7 +20,7 @@ export const createProduct = async (req, res, next) => {
         ...productDetails,
         creator: req.user._id, // setting the creator of the product
     });
-    
+
     await product.save();
 
     // logs for debugging remove in production
@@ -153,3 +153,70 @@ export const deleteProduct = async (req, res, next) => {
         .status(200)
         .json({ success: true, message: "Product deleted successfully" });
 };
+
+// ADD AND UPDATE REVIEW ----------------------- //
+export const addAndUpdateReview = async (req, res, next) => {
+
+    // destructuring rating and comment from request body
+    const { rating, comment, productId } = req.body;
+
+    // review object to be added or updated
+    const review = {
+        user: req.user._id,
+        name: req.user.name,
+        rating: Number(rating),
+        comment: comment,
+    }
+
+    // getting product
+    const product = await Products.findById(productId);
+
+    // if no product found
+    if (!product) {
+        return next(new ErrorHandler("Product not found", 404));
+    }
+
+    // checking if user has already reviewed the product
+    const reviewIndex = product.reviews.findIndex(review => review.user.toString() === req.user._id.toString());
+
+    console.log(reviewIndex)
+
+    // update flag
+    let revAllreadyAdd = reviewIndex !== -1 ? true : false;
+
+    if (reviewIndex !== -1) {
+
+        // User has already reviewed, update the review
+        product.reviews[reviewIndex].rating = rating;
+        product.reviews[reviewIndex].comment = comment;
+
+    } else {
+
+        // User has not reviewed, add a new review
+        product.reviews.push(review);
+
+        // Increment number of reviews
+        product.numOfReviews += 1;
+
+    }
+
+    // Recalculate average rating
+    product.rating = product.reviews.reduce((acc, item) => acc + item.rating, 0) / product.reviews.length;
+
+    // Save the updated product
+    await product.save({ validateBeforeSave: false });
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log("↓--- addAndUpdateReview controller ---↓");
+        console.log(product);
+        console.log("↑--- addAndUpdateReview controller ---↑");
+    }
+
+    // sending response for sucess
+    res.status(200).json({
+        success: true,
+        message: revAllreadyAdd ? "Review updated successfully" : "Review added successfully",
+    });
+
+}

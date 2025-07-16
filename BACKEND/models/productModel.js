@@ -30,12 +30,6 @@ const productSchema = new mongoose.Schema({
         required: true,
     },
 
-    // rating
-    rating: {
-        type: Number,
-        default: 0
-    },
-
     // array of images
     images: [
         {
@@ -62,6 +56,12 @@ const productSchema = new mongoose.Schema({
         required: [true, "Please enter product stock"],
         maxLength: [4, "Stock cannot exceed 4 characters"],
         default: 1
+    },
+
+    // rating
+    rating: {
+        type: Number,
+        default: 0
     },
 
     // Number of reviews

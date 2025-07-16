@@ -1,5 +1,5 @@
 import express from "express"; // Express framework for building APIs
-import { createProduct, deleteProduct, getAllProducts, getSingleProduct, updateProduct } from "../controller/productController.js";
+import { addAndUpdateReview, createProduct, deleteProduct, getAllProducts, getSingleProduct, updateProduct } from "../controller/productController.js";
 import catchAsyncError from "../middleware/catchAsyncError.js"; // Importing catchAsyncError middleware
 import { isUserAuth } from "../middleware/auth.js"; // Importing authentication middleware
 import { authorizeRoles } from "../middleware/authorizeRoles.js"; // Importing authorization middleware
@@ -27,5 +27,9 @@ productRouter.put('/admin/updateProduct/:id', isUserAuth, authorizeRoles("admin"
 // Update product [DELETE] -- Admin only
 productRouter.delete('/admin/deleteProduct/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(deleteProduct));
 // 'http://localhost:5000/api/products/admin/deleteProduct/:id'
+
+// Add and update product review [PUT]
+productRouter.put('/addAndUpdateReview', isUserAuth, catchAsyncError(addAndUpdateReview));
+// 'http://localhost:5000/api/products/addAndUpdateReview'
 
 export default productRouter; // export product router
