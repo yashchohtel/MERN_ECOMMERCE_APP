@@ -179,8 +179,6 @@ export const addAndUpdateReview = async (req, res, next) => {
     // checking if user has already reviewed the product
     const reviewIndex = product.reviews.findIndex(review => review.user.toString() === req.user._id.toString());
 
-    console.log(reviewIndex)
-
     // update flag
     let revAllreadyAdd = reviewIndex !== -1 ? true : false;
 
@@ -220,3 +218,86 @@ export const addAndUpdateReview = async (req, res, next) => {
     });
 
 }
+
+// GET ALL REVIEWS OF A PRODUCT ----------------------- //
+export const getAllReviewsOfProduct = async (req, res, next) => {
+
+    // getting product id from request param
+    const { id } = req.params;
+
+    // getting product
+    const product = await Products.findById(id);
+
+    if (!product) {
+        return next(new ErrorHandler("Product not found", 404));
+    }
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log("↓--- getAllReviewOfProduct controller ---↓");
+        console.log(product.reviews, product.numOfReviews, product.rating);
+        console.log("↑--- getAllReviewOfProduct controller ---↑");
+    }
+
+    res.status(200).json({
+        success: true,
+        reviews: product.reviews,
+        numOfReviews: product.numOfReviews,
+        rating: product.rating,
+    });
+};
+
+// DELETE REVIEW OF A PRODUCT ----------------------- //
+export const deleteReviewOfProduct = async (req, res, next) => {
+
+    // getting product id and review id from request body
+    const { productId, reviewId } = req.body;
+
+    // getting product
+    const product = await Products.findById(productId);
+
+    // if no product found
+    if (!product) {
+        return next(new ErrorHandler("Product not found", 404));
+    }
+
+    // finding the review index
+    const reviewIndex = product.reviews.findIndex(review => review._id.toString() === reviewId.toString());
+
+    // if review not found
+    if (reviewIndex === -1) {
+        return next(new ErrorHandler("Review not found", 404));
+    }
+
+    // getting the review to be deleted
+    const review = product.reviews[reviewIndex];
+
+    // checking if the user is the owner of the review
+    if (review.user.toString() !== req.user._id.toString() && req.user.role !== "admin") {
+        return next(new ErrorHandler("You can only delete your own review", 403));
+    }
+
+    // removing the review
+    product.reviews.splice(reviewIndex, 1);
+
+    // recalculate number of reviews
+    product.numOfReviews = product.reviews.length;
+
+    // Recalculate average rating
+    product.rating = product.reviews.length > 0 ? product.reviews.reduce((acc, item) => acc + item.rating, 0) / product.reviews.length : 0;
+
+    // Save the updated product
+    await product.save({ validateBeforeSave: false });
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log("↓--- deleteReviewOfProduct controller ---↓");
+        console.log(product);
+        console.log("↑--- deleteReviewOfProduct controller ---↑");
+    }
+
+    res.status(200).json({
+        success: true,
+        message: "Review deleted successfully",
+    });
+};
