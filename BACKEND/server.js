@@ -6,6 +6,7 @@ import productRouter from "./routes/productRoutes.js"; // Import product routes
 import userRouter from "./routes/userRoutes.js"; // Import user routes
 import errorMiddleware from "./middleware/error.js"; // Import error handling middleware
 import cookieParser from "cookie-parser"; // Import cookieParser to handle cookies
+import orderRouter from "./routes/orderRoute.js"; // Import order routes 
 
 // -------------------- CONFIGURATION  -------------------- //
 
@@ -36,6 +37,9 @@ app.use("/api/products", productRouter); // Use productRouter for handling produ
 
 // user routes `/api/users`
 app.use("/api/users", userRouter); // Use userRouter for handling user-related routes
+
+// order routes `/api/orders`
+app.use("/api/orders", orderRouter); // use orderRouter for handling order-related routes
 
 // -------------------- ERROR MIDDLEWARE -------------------- //
 

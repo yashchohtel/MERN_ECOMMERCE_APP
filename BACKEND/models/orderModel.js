@@ -33,6 +33,7 @@ const orderSchema = new mongoose.Schema({
 
     },
 
+    // order items
     orderItems: [
 
         {
@@ -61,7 +62,7 @@ const orderSchema = new mongoose.Schema({
             image: {
                 type: String,
                 required: true,
-            }
+            },
 
         },
 
@@ -87,6 +88,58 @@ const orderSchema = new mongoose.Schema({
             required: true,
         },
 
-    }
- 
-});
+        paidAt: {
+            type: Date,
+            required: true,
+        },
+
+    },
+
+    // items price
+    itemsPrice: {
+        type: Number,
+        default: 0,
+        required: true,
+    },
+
+    // tax price
+    taxPrice: {
+        type: Number,
+        default: 0,
+        required: true,
+    },
+
+    // shipping price
+    shippingPrice: {
+        type: Number,
+        default: 0,
+        required: true,
+    },
+
+    // total price
+    totalPrice: {
+        type: Number,
+        default: 0,
+        required: true,
+    },
+
+    // order status
+    orderStatus: {
+        type: String,
+        default: "Processing",
+        required: true,
+    },
+
+    // diliviery date
+    deliveredAt: {
+        type: Date,
+        default: null,
+    },
+
+}, { timestamps: true });
+
+// Create a Orders model
+const Orders = mongoose.model("Orders", orderSchema);
+
+// Export the Orders model
+export default Orders;
