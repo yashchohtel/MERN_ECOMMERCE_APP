@@ -49,7 +49,4 @@ userRouter.delete('/admin/deleteUser/:id', isUserAuth, authorizeRoles("admin"), 
 // 'http://localhost:5000/api/users/admin/deleteUser/:id'
 
 
-
-
-
 export default userRouter; // export product router

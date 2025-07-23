@@ -3,6 +3,10 @@ import ErrorHandler from "../utils/errorHandler.js"; // error handler class to h
 // Middleware to authorize roles
 export const authorizeRoles = (...roles) => {
 
+    if(!roles || roles.length === 0) {
+        throw new ErrorHandler("No roles provided for authorization", 400);
+    }
+
     return (req, res, next) => {
 
         // Check if the user has the required role
