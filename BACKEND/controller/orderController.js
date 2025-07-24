@@ -144,6 +144,9 @@ export const updateOrderStatus = async (req, res, next) => {
     // getting order id from request param
     const { id } = req.params;
 
+    // geting order status from request body
+    const { status } = req.body;
+
     // getting order
     const order = await Orders.findById(id);
 
@@ -152,13 +155,32 @@ export const updateOrderStatus = async (req, res, next) => {
         return next(new ErrorHandler("Order not found", 404));
     }
 
+    // if order is already delivered
+    if (order.orderStatus === "delivered") {
+        return next(new ErrorHandler("Order is already delivered", 400));
+    }
+
+    // for updating stock if status is shipped
+    if (status === "Shipped") {
+        for (const item of order.orderItems) {
+            const product = await Products.findById(item.product);
+            await product.updateStock(item.quantity);
+        }
+    }
+
+    // for updating product delivery date
+    if (status === "delivered") {
+        order.deliveredAt = Date.now();
+    }
+
     // updating order status
-    order.orderStatus = req.body.status;
-    await order.save();
+    order.orderStatus = status;
+    await order.save({ validateBeforeSave: false });
 
     // logs for debugging remove in production
     if (process.env.NODE_ENV === "development") {
         console.log('↓--- update order status controller ---↓');
+        console.log(`Updated status: ${status}`);
         console.log(`Updated Order: ${order}`);
         console.log('↑--- update order status controller ---↑');
     }
@@ -166,14 +188,8 @@ export const updateOrderStatus = async (req, res, next) => {
     // sending response for success
     res.status(200).json({
         success: true,
-        message: "Order status updated successfully",
+        message: `Order status updated to ${req.body.status}`,
         order,
     });
 };
-
-
-
-
-
-
 

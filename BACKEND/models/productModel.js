@@ -95,6 +95,21 @@ const productSchema = new mongoose.Schema({
 
 }, { timestamps: true })
 
+// Instance Method to update stock
+productSchema.methods.updateStock = async function (quantity) {
+
+    // updating quantity
+    this.stock -= quantity;
+
+    // if no stock
+    if (this.stock < 0) {
+        throw new Error("Not enough stock available");
+    }
+
+    // save
+    await this.save({ validateBeforeSave: false });
+};
+
 // Create a products model
 const Products = mongoose.model("Products", productSchema);
 
