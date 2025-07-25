@@ -1,4 +1,5 @@
 import mongoose from "mongoose"; // Import mongoose
+import ErrorHandler from "../utils/errorHandler.js"; // Import ErrorHandler utility
 
 // product schema
 const productSchema = new mongoose.Schema({
@@ -103,7 +104,7 @@ productSchema.methods.updateStock = async function (quantity) {
 
     // if no stock
     if (this.stock < 0) {
-        throw new Error("Not enough stock available");
+        throw new ErrorHandler("Not enough stock available");
     }
 
     // save

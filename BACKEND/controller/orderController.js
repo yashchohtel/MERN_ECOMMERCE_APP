@@ -161,7 +161,7 @@ export const updateOrderStatus = async (req, res, next) => {
     }
 
     // for updating stock if status is shipped
-    if (status === "Shipped") {
+    if (status === "shipped") {
         for (const item of order.orderItems) {
             const product = await Products.findById(item.product);
             await product.updateStock(item.quantity);
@@ -192,4 +192,34 @@ export const updateOrderStatus = async (req, res, next) => {
         order,
     });
 };
+
+// DELETE ORDER CONTROLLER ------------------------------ //
+export const deleteOrder = async (req, res, next) => {
+
+    const { id } = req.params; // getting order id from request param
+
+    const order = await Orders.findById(id); // getting order by id
+
+    // if no order found
+    if (!order) {
+        return next(new ErrorHandler("Order not found", 404));
+    }
+
+    // deleting order
+    await Orders.findByIdAndDelete(id);
+
+    // logs for debugging remove in production
+    if (process.env.NODE_ENV === "development") {
+        console.log('↓--- delete order controller ---↓');
+        console.log(`Deleted Order ID: ${id}`);
+        console.log('↑--- delete order controller ---↑');
+    }
+
+    // sending response for success
+    res.status(200).json({
+        success: true,
+        message: "Order deleted successfully",
+    });
+
+}
 

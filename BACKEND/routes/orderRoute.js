@@ -2,7 +2,7 @@ import express from "express"; // Express framework for building APIs
 import catchAsyncError from "../middleware/catchAsyncError.js"; // Importing catchAsyncError middleware
 import { isUserAuth } from "../middleware/auth.js"; // Importing authentication middleware
 import { authorizeRoles } from "../middleware/authorizeRoles.js"; // Importing authorization middleware
-import { createNewOrder, getAllOrders, getSingleOrderDetail, myOrders, updateOrderStatus } from "../controller/orderController.js";
+import { createNewOrder, deleteOrder, getAllOrders, getSingleOrderDetail, myOrders, updateOrderStatus } from "../controller/orderController.js";
 
 const orderRouter = express.Router(); // Creating an instance of Express Router
 
@@ -27,6 +27,10 @@ orderRouter.get('/getAllOrdersDetails', isUserAuth, authorizeRoles("admin"), cat
 // Update order status [PUT] -- Admin only
 orderRouter.put('/updateOrderStatus/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(updateOrderStatus));
 // 'http://localhost:5000/api/orders/updateOrderStatus/:id'
+
+// Delete order [DELETE] -- Admin only
+orderRouter.delete('/deleteOrder/:id', isUserAuth, authorizeRoles("admin"), catchAsyncError(deleteOrder));
+// 'http://localhost:5000/api/orders/deleteOrder/:id'
 
 
 export default orderRouter; // export product router
