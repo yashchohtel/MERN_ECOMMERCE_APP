@@ -1,0 +1,17 @@
+.navbar .navbar-links{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar .navbar-links .nav_link{
+    color: var(--color-text-1);
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+}

@@ -2,6 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
+  /* colors */
+  --bg-light-1: #f5f5f6;
+  --bg-light-2: #ff80b9;
+
+  /* text color */
+  --color-text-1: #000;
+  --color-text-2: #74758a;
+
+  /* border color */
+  --border-color-light-1: #7171711f;
+
+  /* box shadow */
+  --shadow-1: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
   /* fonts */
   --font-primary: "Lato", sans-serif; /* For Navbar, Buttons */
   --font-secondary: "Poppins", sans-serif; /* For Body Text */
@@ -87,41 +101,20 @@ img {
   width: 97%;
   max-width: 1480px;
   margin: 0 auto;
-  background-color: red;
 }
 
 /* Reverse order: biggest screen first */
 @media (max-width: 1399px) {
-  .container {
-    /* max-width: 1140px; */
-    background-color: blue;
-  }
 }
 
 @media (max-width: 1199px) {
-  .container {
-    /* max-width: 960px; */
-    background-color: green;
-  }
 }
 
 @media (max-width: 991px) {
-  .container {
-    /* max-width: 720px; */
-    background-color: yellow;
-  }
 }
 
 @media (max-width: 767px) {
-  .container {
-    /* max-width: 540px; */
-    background-color: pink;
-  }
 }
 
 @media (max-width: 575px) {
-  .container {
-    /* max-width: 100%; */
-    background-color: orange;
-  }
 }
