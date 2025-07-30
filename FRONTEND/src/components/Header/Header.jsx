@@ -39,7 +39,7 @@ const Header = () => {
                         <div className="action-icon">
 
                             {/* count */}
-                            <span className='count'>3</span>
+                            <span className='count'>6</span>
 
                             <div className="icon_container">
                                 <GoHeart className='icon_outline' />
@@ -52,7 +52,7 @@ const Header = () => {
                         <div className="action-icon">
 
                             {/* count */}
-                            <span className='count'>3</span>
+                            <span className='count'>2</span>
 
                             <div className="icon_container">
                                 <IoBagHandleOutline className='icon_outline' />

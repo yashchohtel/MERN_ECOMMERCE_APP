@@ -5,16 +5,27 @@
   /* colors */
   --bg-light-1: #f5f5f6;
   --bg-light-2: #ff80b9;
+  --bg-light-3: #f13232;
+  --bg-light-4: #f7f7f7;
+  --bg-light-5: #ebebeb;
 
   /* text color */
   --color-text-1: #000;
   --color-text-2: #74758a;
+  --color-text-3: #282c3f;
+
+  --nav-text-color-1: #ee5f73;
+  --nav-text-color-2: #fb56c1;
+  --nav-text-color-3: #f2c210;
+  --nav-text-color-4: #799eff;
+  --nav-text-color-5: #0f828c;
 
   /* border color */
   --border-color-light-1: #7171711f;
 
   /* box shadow */
   --shadow-1: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  --shadow-2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   /* fonts */
   --font-primary: "Lato", sans-serif; /* For Navbar, Buttons */
