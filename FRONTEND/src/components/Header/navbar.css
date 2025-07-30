@@ -80,18 +80,19 @@
 
 .submenu .category {
   display: flex;
+  gap: 1rem;
 }
 
 .category .catgory_item {
   white-space: nowrap;
-  font-size: 1.6rem;
-  font-family: var(--font-tertiary);
-  font-weight: 600;
-  /* width: 18rem; */
 }
 
 .submenu .category .catgory_item .category_head {
   padding: 0 1rem;
+  padding: 0 1rem;
+  font-family: var(--font-tertiary);
+  font-size: 1.7rem;
+  font-weight: 700;
 }
 
 .nav_link:nth-child(1) .submenu .category .catgory_item .category_head {

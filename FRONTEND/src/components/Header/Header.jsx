@@ -46,6 +46,13 @@ const Header = () => {
                                 <GoHeartFill className='iocn_filled' />
                             </div>
 
+                            {/* wishlist submenu */}
+                            <div className="wish_submenu">
+
+                                
+
+                            </div>
+
                         </div>
 
                         {/* cart */}

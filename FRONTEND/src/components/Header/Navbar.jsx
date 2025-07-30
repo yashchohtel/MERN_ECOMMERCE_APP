@@ -101,6 +101,11 @@ const Navbar = () => {
                                         <li className='items'>Jeans</li>
                                         <li className='items'>Jackets</li>
                                         <li className='items'>Ethnic Wear</li>
+                                        <li className='items'>Hoodies</li>
+                                        <li className='items'>Blazers</li>
+                                        <li className='items'>Track Pants</li>
+                                        <li className='items'>Suits</li>
+                                        <li className='items'>Innerwear</li>
                                     </ul>
                                 </li>
 
@@ -112,6 +117,11 @@ const Navbar = () => {
                                         <li className='items'>Sarees</li>
                                         <li className='items'>Kurtis</li>
                                         <li className='items'>Leggings & Palazzos</li>
+                                        <li className='items'>Tunics</li>
+                                        <li className='items'>Ethnic Sets</li>
+                                        <li className='items'>Lingerie</li>
+                                        <li className='items'>Nightwear</li>
+                                        <li className='items'>Maternity Wear</li>
                                     </ul>
                                 </li>
 
@@ -123,6 +133,11 @@ const Navbar = () => {
                                         <li className='items'>Formal Shoes</li>
                                         <li className='items'>Heels</li>
                                         <li className='items'>Sandals</li>
+                                        <li className='items'>Flip Flops</li>
+                                        <li className='items'>Sports Shoes</li>
+                                        <li className='items'>Loafers</li>
+                                        <li className='items'>Slippers</li>
+                                        <li className='items'>Boots</li>
                                     </ul>
                                 </li>
 
@@ -134,6 +149,11 @@ const Navbar = () => {
                                         <li className='items'>Belts</li>
                                         <li className='items'>Sunglasses</li>
                                         <li className='items'>Wallets</li>
+                                        <li className='items'>Hats & Caps</li>
+                                        <li className='items'>Scarves</li>
+                                        <li className='items'>Jewellery</li>
+                                        <li className='items'>Hair Accessories</li>
+                                        <li className='items'>Ties</li>
                                     </ul>
                                 </li>
 
@@ -145,11 +165,18 @@ const Navbar = () => {
                                         <li className='items'>Shorts</li>
                                         <li className='items'>School Bags</li>
                                         <li className='items'>Kids Footwear</li>
+                                        <li className='items'>Ethnic Wear</li>
+                                        <li className='items'>Toys & Games</li>
+                                        <li className='items'>Winter Wear</li>
+                                        <li className='items'>Sleepwear</li>
+                                        <li className='items'>Caps & Gloves</li>
                                     </ul>
                                 </li>
 
                             </ul>
+                            
                         </div>
+
 
                     </li>
 
