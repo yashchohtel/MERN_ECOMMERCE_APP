@@ -9,6 +9,8 @@
   --bg-light-4: #f7f7f7;
   --bg-light-5: #ebebeb;
 
+  --bg-button-1: #303030;
+
   /* text color */
   --color-text-1: #000;
   --color-text-2: #74758a;
@@ -20,12 +22,17 @@
   --nav-text-color-4: #799eff;
   --nav-text-color-5: #0f828c;
 
+
+
   /* border color */
   --border-color-light-1: #7171711f;
 
   /* box shadow */
   --shadow-1: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   --shadow-2: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  /* transition */
+  --transition-1: all 0.2s ease;
 
   /* fonts */
   --font-primary: "Lato", sans-serif; /* For Navbar, Buttons */
@@ -103,6 +110,29 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Target the scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track (background area) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Thumb (scroll handle) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* reusables classes */
