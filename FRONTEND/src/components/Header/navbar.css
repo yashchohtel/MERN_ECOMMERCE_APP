@@ -33,13 +33,14 @@
 
 .nav_link .tag {
   color: var(--color-text-1);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.06rem;
   font-family: var(--font-tertiary);
   position: relative;
+      letter-spacing: 0.05rem;
 }
 
 .nav_link .border {
@@ -61,7 +62,7 @@
 .submenu {
   background: var(--bg-light-4);
   padding: 2rem;
-  z-index: -1;
+  z-index: 3;
   box-shadow: var(--shadow-2);
   visibility: hidden;
   opacity: 0;
@@ -70,10 +71,11 @@
   left: 50%;
   top: 100%;
   transform: translate(-50%, 10px);
+  border-radius: 5px;
 }
 
 .nav_link:hover .submenu {
-  transform: translate(-50%, 0px);
+  transform: translate(-50%, 1px);
   visibility: visible;
   opacity: 1;
 }

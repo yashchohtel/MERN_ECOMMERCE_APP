@@ -314,14 +314,8 @@ const Header = () => {
 
                             {/* user sub menu */}
                             <div className="user_submenu">
-                                <p className="profile">
-                                    <MdOutlineAccountCircle />
-                                    <span>View Profile</span>
-                                </p>
-                                <p className="auth">
-                                    <MdLogin />
-                                    <span>login/signup</span>
-                                </p>
+                                <p className="profile"> View Profile</p>
+                                <p className="auth">login/signup</p>
                             </div>
 
                         </div>
