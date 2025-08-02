@@ -16,7 +16,7 @@ const Slider = () => {
                 spaceBetween={30}
                 slidesPerView={1}
                 loop={true}
-                autoplay={{ delay: 3000 }}
+                // autoplay={{ delay: 3000 }}
                 pagination={{ clickable: true }}
             >
                 {/* {images.map((img, index) => (
@@ -27,35 +27,40 @@ const Slider = () => {
                     </SwiperSlide>
                 ))} */}
 
-                <SwiperSlide>
-                    <div className="img_slide_cont">
-                        <img src="/banner (1).jpg" alt="Slide 1" />
-                    </div>
-                </SwiperSlide>
+                <div className="container">
 
-                <SwiperSlide>
-                    <div className="img_slide_cont">
-                        <img src="/banner (2).jpg" alt="Slide 2" />
-                    </div>
-                </SwiperSlide>
 
-                <SwiperSlide>
-                    <div className="img_slide_cont">
-                        <img src="/banner (3).jpg" alt="Slide 3" />
-                    </div>
-                </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="img_slide_cont">
+                            <img src="/banner (1).jpg" alt="Slide 1" />
+                        </div>
+                    </SwiperSlide>
 
-                <SwiperSlide>
-                    <div className="img_slide_cont">
-                        <img src="/banner (4).jpg" alt="Slide 4" />
-                    </div>
-                </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="img_slide_cont">
+                            <img src="/banner (2).jpg" alt="Slide 2" />
+                        </div>
+                    </SwiperSlide>
 
-                <SwiperSlide>
-                    <div className="img_slide_cont">
-                        <img src="/banner (5).jpg" alt="Slide 5" />
-                    </div>
-                </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="img_slide_cont">
+                            <img src="/banner (6).jpg" alt="Slide 3" />
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <div className="img_slide_cont">
+                            <img src="/banner (7).jpg" alt="Slide 4" />
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <div className="img_slide_cont">
+                            <img src="/banner (5).jpg" alt="Slide 5" />
+                        </div>
+                    </SwiperSlide>
+
+                </div>
 
             </Swiper>
         </>

@@ -1,13 +1,12 @@
-.img_slide_cont{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60rem;
+.img_slide_cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
 }
 
-.img_slide_cont img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.img_slide_cont img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
- 
