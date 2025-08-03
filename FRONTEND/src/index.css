@@ -7,15 +7,18 @@
   --bg-light-2: #ff80b9;
   --bg-light-3: #f13232;
   --bg-light-4: #f7f7f7;
-  --bg-light-5: #ebebeb;
 
   --bg-button-1: #303030;
+
+  /* hover color */
+  --bg-hover-1: #ebebeb;
 
   /* text color */
   --color-text-1: #000;
   --color-text-2: #74758a;
   --color-text-3: #282c3f;
   --color-text-4: #454545;
+  --color-text-5: #787878;
 
   --nav-text-color-1: #ee5f73;
   --nav-text-color-2: #fb56c1;
@@ -37,7 +40,6 @@
   --font-primary: "Lato", sans-serif; /* For Navbar, Buttons */
   --font-secondary: "Poppins", sans-serif; /* For Body Text */
   --font-tertiary: "Montserrat", sans-serif; /* For Logo, Headings */
-  --font-four: "Kaushan Script", cursive; /* For Logo, Headings */
 }
 
 /* Universal Reset */
@@ -141,6 +143,11 @@ img {
   width: 97%;
   max-width: 1480px;
   margin: 0 auto;
+}
+
+/* section */
+.section {
+  margin: 6rem 0;
 }
 
 /* Reverse order: biggest screen first */

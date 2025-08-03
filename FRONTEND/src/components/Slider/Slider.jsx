@@ -5,7 +5,6 @@ import "./slider.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css/pagination';
-
 import 'swiper/css';
 
 const Slider = () => {
@@ -29,19 +28,6 @@ const Slider = () => {
 
                 <div className="container">
 
-
-                    <SwiperSlide>
-                        <div className="img_slide_cont">
-                            <img src="/banner (1).jpg" alt="Slide 1" />
-                        </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <div className="img_slide_cont">
-                            <img src="/banner (2).jpg" alt="Slide 2" />
-                        </div>
-                    </SwiperSlide>
-
                     <SwiperSlide>
                         <div className="img_slide_cont">
                             <img src="/banner (6).jpg" alt="Slide 3" />
@@ -51,6 +37,18 @@ const Slider = () => {
                     <SwiperSlide>
                         <div className="img_slide_cont">
                             <img src="/banner (7).jpg" alt="Slide 4" />
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <div className="img_slide_cont">
+                            <img src="/banner (8).jpg" alt="Slide 1" />
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <div className="img_slide_cont">
+                            <img src="/banner (2).jpg" alt="Slide 2" />
                         </div>
                     </SwiperSlide>
 

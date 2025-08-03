@@ -18,7 +18,7 @@ const Header = () => {
             <div className="header">
 
                 {/* container wrapper */}
-                <div className="container">
+                <div className="container header_cont">
 
                     {/* logo */}
                     <div className="logo">

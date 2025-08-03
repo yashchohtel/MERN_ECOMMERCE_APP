@@ -40,7 +40,7 @@
   letter-spacing: 0.06rem;
   font-family: var(--font-tertiary);
   position: relative;
-      letter-spacing: 0.05rem;
+  letter-spacing: 0.05rem;
 }
 
 .nav_link .border {
@@ -121,7 +121,7 @@
 
 .submenu .category .catgory_item .category_list .items {
   font-size: 1.5rem;
-  color: var(--color-text-4);
+  color: var(--color-text-5);
   font-family: var(--font-tertiary);
   font-weight: 500;
   transition: all 0.1s ease;
@@ -133,5 +133,6 @@
 }
 
 .submenu .category .catgory_item .category_list .items:hover {
-  background: var(--bg-light-5);
+  background: var(--bg-hover-1);
+  color: var(--color-text-4);
 }
