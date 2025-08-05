@@ -10,6 +10,7 @@
   --bg-light-5: #e4e4e4;
 
   --bg-button-1: #303030;
+  --bg-button-2: #ff80b9;
 
   /* hover color */
   --bg-hover-1: #ebebeb;
@@ -20,6 +21,7 @@
   --color-text-3: #282c3f;
   --color-text-4: #454545;
   --color-text-5: #787878;
+  --color-text-6: #ffffff;
 
   --nav-text-color-1: #ee5f73;
   --nav-text-color-2: #fb56c1;
@@ -162,6 +164,25 @@ img {
   letter-spacing: 1px;
   color: var(--color-text-4);
   word-spacing: 0.1rem;
+}
+
+.button {
+  width: fit-content;
+  background: var(--bg-button-1);
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+  font-family: var(--font-tertiary);
+  font-size: 1.7rem;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 5px;
+  letter-spacing: 0.05rem;
+  transition: var(--transition-1);
+}
+
+.button:hover {
+  background: var(--bg-button-2);
+  color: var(--color-text-3);
 }
 
 /* Reverse order: biggest screen first */

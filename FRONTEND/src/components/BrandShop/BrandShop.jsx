@@ -161,7 +161,7 @@ const BrandShop = () => {
                             </SwiperSlide>
 
                         </Swiper>
-                        
+
                         <Swiper
                             modules={[Autoplay, Pagination]}
                             spaceBetween={20}
@@ -169,30 +169,6 @@ const BrandShop = () => {
                             loop={true}
                             autoplay={{ delay: 3000 }}
                         >
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo (10).png" alt="Slide 3" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo (9).png" alt="Slide 4" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo (1).png" alt="Slide 1" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo (2).png" alt="Slide 2" />
-                                </div>
-                            </SwiperSlide>
 
                             <SwiperSlide>
                                 <div className="img_slide_cont">
@@ -227,6 +203,30 @@ const BrandShop = () => {
                             <SwiperSlide>
                                 <div className="img_slide_cont">
                                     <img src="/logo (8).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo (10).png" alt="Slide 3" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo (9).png" alt="Slide 4" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo (1).png" alt="Slide 1" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo (2).png" alt="Slide 2" />
                                 </div>
                             </SwiperSlide>
 
