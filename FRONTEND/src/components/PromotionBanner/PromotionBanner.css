@@ -29,10 +29,9 @@
   transition: var(--transition-1);
 }
 
-/* .promotion_banner_container .promotion_banner_content:hover .description {
-  background: var(--bg-light-5);
-  opacity: 0.1;
-} */
+.promotion_banner_container .promotion_banner_content:hover .description {
+  background: rgba(0, 0, 0, 0.4);
+}
 
 .promotion_banner_container .promotion_banner_content .heading {
   position: absolute;
@@ -57,10 +56,14 @@
   font-family: var(--font-tertiary);
   color: var(--color-text-6);
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid #b6b6b6;
   font-weight: 500;
+  color: #b6b6b6;
+  transition: var(--transition-1);
 }
 
-.promotion_banner_container .promotion_banner_content:hover .button {
+.promotion_banner_container .promotion_banner_content:hover .promo_button {
   box-shadow: var(--shadow-2);
+  border-bottom: 1px solid #fff;
+  color: #fff;
 }
