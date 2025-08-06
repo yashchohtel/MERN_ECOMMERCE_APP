@@ -7,8 +7,10 @@ function App() {
 
   return (
     <>
+
       {/* home page */}
       <Home />
+      
     </>
   )
 }

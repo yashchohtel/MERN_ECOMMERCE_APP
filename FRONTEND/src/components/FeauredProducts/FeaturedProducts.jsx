@@ -1,7 +1,6 @@
 import React from 'react'
 import './FeaturedProducts.css'
 import FeaturedProductSlide from './FeaturedProductSlide'
-import DealOfTheDay from './DealOfTheDay'
 
 const FeaturedProducts = () => {
 
@@ -29,9 +28,6 @@ const FeaturedProducts = () => {
                     <FeaturedProductSlide title="Recommended" />
 
                 </div>
-
-                {/* deal of the day section */}
-                <DealOfTheDay />
 
             </section>
         </>

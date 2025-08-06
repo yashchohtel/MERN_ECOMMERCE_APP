@@ -40,8 +40,6 @@ const miniProducts = [
     }
 ];
 
-
-
 const FeaturedProductSlide = ({ title }) => {
     return (
 
