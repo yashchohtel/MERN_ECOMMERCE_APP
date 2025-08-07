@@ -1,0 +1,12 @@
+.highlight_content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.highlight_item{
+    width: 100%;
+    height: max-content;
+    cursor: pointer;
+    
+}

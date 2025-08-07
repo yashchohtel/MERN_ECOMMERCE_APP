@@ -29,7 +29,6 @@ const BrandShop = () => {
                             loop={true}
                             autoplay={{ delay: 3000 }}
                         >
-
                             <SwiperSlide>
                                 <div className="img_slide_cont">
                                     <img src="/logo-tech (4).png" alt="Slide 5" />
@@ -172,76 +171,6 @@ const BrandShop = () => {
 
                             <SwiperSlide>
                                 <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (1).png" alt="Slide 5" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (2).png" alt="Slide 5" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (3).png" alt="Slide 5" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (4).png" alt="Slide 5" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (5).png" alt="Slide 5" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (6).png" alt="Slide 5" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (7).png" alt="Slide 3" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (8).png" alt="Slide 4" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (9).png" alt="Slide 1" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
-                                    <img src="/logo-skin-care (10).png" alt="Slide 2" />
-                                </div>
-                            </SwiperSlide>
-
-                        </Swiper>
-
-                        <Swiper
-                            modules={[Autoplay, Pagination]}
-                            spaceBetween={20}
-                            slidesPerView={9}
-                            loop={true}
-                            autoplay={{ delay: 3000 }}
-                        >
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
                                     <img src="/logo-acces (2).png" alt="Slide 5" />
                                 </div>
                             </SwiperSlide>
@@ -297,6 +226,146 @@ const BrandShop = () => {
                             <SwiperSlide>
                                 <div className="img_slide_cont">
                                     <img src="/logo-acces (10).png" alt="Slide 2" />
+                                </div>
+                            </SwiperSlide>
+
+                        </Swiper>
+
+                        <Swiper
+                            modules={[Autoplay, Pagination]}
+                            spaceBetween={20}
+                            slidesPerView={9}
+                            loop={true}
+                            autoplay={{ delay: 3000 }}
+                        >
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (2).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (4).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (5).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (1).jpeg" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (6).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (7).png" alt="Slide 3" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (8).png" alt="Slide 4" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (3).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (9).png" alt="Slide 1" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-pref (10).png" alt="Slide 2" />
+                                </div>
+                            </SwiperSlide>
+
+                        </Swiper>
+
+                        <Swiper
+                            modules={[Autoplay, Pagination]}
+                            spaceBetween={20}
+                            slidesPerView={9}
+                            loop={true}
+                            autoplay={{ delay: 3000 }}
+                        >
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (1).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (2).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (3).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (4).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (5).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (6).png" alt="Slide 5" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (7).png" alt="Slide 3" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (8).png" alt="Slide 4" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (9).png" alt="Slide 1" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-skin-care (10).png" alt="Slide 2" />
                                 </div>
                             </SwiperSlide>
 

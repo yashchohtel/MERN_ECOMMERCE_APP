@@ -7,6 +7,194 @@ import PromotionBanner from '../components/PromotionBanner/PromotionBanner.jsx'
 import LatestDrop from '../components/LatestDrop/LatestDrop.jsx'
 import DealOfTheDay from '../components/DealOfTheDay/DealOfTheDay.jsx'
 import ShopTheHighlights from '../components/ShopTheHighlights/ShopTheHighlights.jsx'
+import ProductDisplay from '../components/ProductDisplay/ProductDisplay.jsx'
+
+
+const products = [
+    {
+        _id: "1",
+        name: "Casual Cotton Shirt",
+        description: "just do it",
+        price: 1999,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 4,
+        category: "Clothes",
+        stock: 100,
+        numOfReviews: 3,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+    {
+        _id: "2",
+        name: "Wireless Headphones",
+        description: "just do it",
+        price: 2499,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 5,
+        category: "Electronics",
+        stock: 80,
+        numOfReviews: 5,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+    {
+        _id: "3",
+        name: "Leather Backpack",
+        description: "just do it",
+        price: 3199,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 3,
+        category: "Accessories",
+        stock: 60,
+        numOfReviews: 2,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+    {
+        _id: "4",
+        name: "Running Sneakers",
+        description: "just do it",
+        price: 2799,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 4,
+        category: "Shoes",
+        stock: 120,
+        numOfReviews: 4,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+    {
+        _id: "5",
+        name: "Smart Watch Pro",
+        description: "just do it",
+        price: 5599,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 5,
+        category: "Gadgets",
+        stock: 70,
+        numOfReviews: 6,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+    {
+        _id: "1",
+        name: "Casual Cotton Shirt",
+        description: "just do it",
+        price: 1999,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 4,
+        category: "Clothes",
+        stock: 100,
+        numOfReviews: 3,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+    {
+        _id: "2",
+        name: "Wireless Headphones",
+        description: "just do it",
+        price: 2499,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 5,
+        category: "Electronics",
+        stock: 80,
+        numOfReviews: 5,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+    {
+        _id: "3",
+        name: "Leather Backpack",
+        description: "just do it",
+        price: 3199,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 3,
+        category: "Accessories",
+        stock: 60,
+        numOfReviews: 2,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+    {
+        _id: "4",
+        name: "Running Sneakers",
+        description: "just do it",
+        price: 2799,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 4,
+        category: "Shoes",
+        stock: 120,
+        numOfReviews: 4,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+    {
+        _id: "5",
+        name: "Smart Watch Pro",
+        description: "just do it",
+        price: 5599,
+        creator: "686fd2129b088b4b1257a5e0",
+        rating: 5,
+        category: "Gadgets",
+        stock: 70,
+        numOfReviews: 6,
+        images: [
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
+            { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
+        ]
+    },
+
+];
+
+
 
 const Home = () => {
     return (
@@ -17,23 +205,26 @@ const Home = () => {
             {/* slider component */}
             <Slider />
 
-            {/* brands category */}
-            <BrandShop />
-
-            {/* PromotioalBanner */}
-            <PromotionBanner/>
-
             {/* featured products */}
             <FeaturedProducts />
 
+            {/* PromotioalBanner */}
+            <PromotionBanner />
+
             {/* Deal of the Day section */}
-            <DealOfTheDay/>
+            <DealOfTheDay />
+
+            {/* brands category */}
+            <BrandShop />
 
             {/* shop the hightliht section */}
-            <ShopTheHighlights/>
+            <ShopTheHighlights />
+
+            {/* product display section */}
+            <ProductDisplay heading={"latest fashion drop"} products={products} />
 
         </>
     )
 }
 
-export default Home
+export default Home;
