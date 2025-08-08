@@ -40,8 +40,8 @@ const products = [
         stock: 80,
         numOfReviews: 5,
         images: [
-            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
             { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
             { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
@@ -58,9 +58,9 @@ const products = [
         stock: 60,
         numOfReviews: 2,
         images: [
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
             { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
-            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
             { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
             { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
         ]
@@ -76,10 +76,10 @@ const products = [
         stock: 120,
         numOfReviews: 4,
         images: [
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
             { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
             { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
-            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
             { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
         ]
     },
@@ -94,15 +94,15 @@ const products = [
         stock: 70,
         numOfReviews: 6,
         images: [
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
             { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
             { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
-            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
         ]
     },
     {
-        _id: "1",
+        _id: "6",
         name: "Casual Cotton Shirt",
         description: "just do it",
         price: 1999,
@@ -120,7 +120,7 @@ const products = [
         ]
     },
     {
-        _id: "2",
+        _id: "7",
         name: "Wireless Headphones",
         description: "just do it",
         price: 2499,
@@ -130,15 +130,15 @@ const products = [
         stock: 80,
         numOfReviews: 5,
         images: [
-            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
+            { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
             { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
             { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
         ]
     },
     {
-        _id: "3",
+        _id: "8",
         name: "Leather Backpack",
         description: "just do it",
         price: 3199,
@@ -148,15 +148,15 @@ const products = [
         stock: 60,
         numOfReviews: 2,
         images: [
+            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
             { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
-            { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
             { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
             { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
         ]
     },
     {
-        _id: "4",
+        _id: "9",
         name: "Running Sneakers",
         description: "just do it",
         price: 2799,
@@ -166,15 +166,15 @@ const products = [
         stock: 120,
         numOfReviews: 4,
         images: [
+            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
             { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
             { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
-            { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
             { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
         ]
     },
     {
-        _id: "5",
+        _id: "10",
         name: "Smart Watch Pro",
         description: "just do it",
         price: 5599,
@@ -184,17 +184,15 @@ const products = [
         stock: 70,
         numOfReviews: 6,
         images: [
+            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://m.media-amazon.com/images/I/71pKJ+Mjd8L._AC_UY327_FMwebp_QL65_.jpg" },
             { url: "https://www.apple.com/v/iphone/home/cd/images/overview/select/iphone_16__c5bvots96jee_large_2x.png" },
             { url: "https://m.media-amazon.com/images/I/51aFJQT-19L._SY625_.jpg" },
             { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
-            { url: "https://m.media-amazon.com/images/I/717Q2swzhBL._AC_UY327_FMwebp_QL65_.jpg" }
         ]
     },
 
 ];
-
-
 
 const Home = () => {
     return (

@@ -189,12 +189,6 @@ const BrandShop = () => {
 
                             <SwiperSlide>
                                 <div className="img_slide_cont">
-                                    <img src="/logo-acces (1).png" alt="Slide 5" />
-                                </div>
-                            </SwiperSlide>
-
-                            <SwiperSlide>
-                                <div className="img_slide_cont">
                                     <img src="/logo-acces (6).png" alt="Slide 5" />
                                 </div>
                             </SwiperSlide>
@@ -220,6 +214,12 @@ const BrandShop = () => {
                             <SwiperSlide>
                                 <div className="img_slide_cont">
                                     <img src="/logo-acces (9).png" alt="Slide 1" />
+                                </div>
+                            </SwiperSlide>
+
+                            <SwiperSlide>
+                                <div className="img_slide_cont">
+                                    <img src="/logo-acces (1).png" alt="Slide 5" />
                                 </div>
                             </SwiperSlide>
 

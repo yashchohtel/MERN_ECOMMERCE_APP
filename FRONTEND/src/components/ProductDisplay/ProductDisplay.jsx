@@ -1,8 +1,7 @@
 import React from 'react'
 import './productDisplay.css';
-import ProductCard from '../ProductCard/ProductCard';
 
-const ProductDisplay = ({ heading, products }) => {
+const ProductDisplay = ({ heading }) => {
 
     return (
         <>
@@ -19,15 +18,12 @@ const ProductDisplay = ({ heading, products }) => {
                     {/* product cards */}
                     <div className="product_display_grid">
 
-                        {/* map through products and display ProductCard */}
-                        {products.map((product) => (
-                            <ProductCard key={product._id} product={product} />
-                        ))}
+                        
 
                     </div>
 
                 </div>
-``
+                
             </section>
         </>
     )
