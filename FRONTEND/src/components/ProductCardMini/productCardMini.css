@@ -1,0 +1,28 @@
+.product_card_mini {
+  width: 100%;
+  border: 1px solid var(--border-color-light-1);
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.product_image_slider {
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+}
+
+.slider_track {
+  display: flex;
+}
+
+.slide {
+  min-width: 100%;
+  height: 200px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

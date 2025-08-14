@@ -1,7 +1,11 @@
 import React from 'react'
 import './productDisplay.css';
+import ProductCardMini from '../ProductCardMini/ProductCardMini';
 
-const ProductDisplay = ({ heading }) => {
+const ProductDisplay = ({ heading, products }) => {
+
+    console.log(products);
+
 
     return (
         <>
@@ -18,12 +22,14 @@ const ProductDisplay = ({ heading }) => {
                     {/* product cards */}
                     <div className="product_display_grid">
 
-                        
+                        {products && products.map((product) => (
+                            <ProductCardMini product={product} />
+                        ))}
 
                     </div>
 
                 </div>
-                
+
             </section>
         </>
     )

@@ -380,7 +380,4 @@ const BrandShop = () => {
     )
 }
 
-
-
-
-export default BrandShop
+export default BrandShop  
