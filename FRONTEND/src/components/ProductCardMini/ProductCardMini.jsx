@@ -20,12 +20,22 @@ const ProductCardMini = ({ product }) => {
         product.images[0] // first image duplicate at end
     ];
 
+    // active dot index calculation
+    const activeDotIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+
+    console.log(activeDotIndex);
+    
+    const goToSlide = (dotIndex) => {
+        setCurrentIndex(dotIndex + 1);
+        setIsTransitioning(true);
+    };
+
     // Set up interval to change image every 3 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => prevIndex + 1);
             setIsTransitioning(true);
-        }, 3000000);
+        }, 3000);
 
         return () => clearInterval(interval);
     }, []);
@@ -74,11 +84,13 @@ const ProductCardMini = ({ product }) => {
 
                 {/* pagination dots */}
                 <div className="slider_pag_dot">
-
                     {Array.from({ length: totalSlides }).map((_, index) => (
-                        <span className='dot'></span>
+                        <span
+                            key={index}
+                            className={`dot ${activeDotIndex === index ? 'active' : ''}`}
+                            onClick={() => goToSlide(index)}
+                        ></span>
                     ))}
-
                 </div>
 
             </div>

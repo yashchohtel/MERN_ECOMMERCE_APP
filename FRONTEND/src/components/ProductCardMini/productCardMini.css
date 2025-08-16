@@ -54,13 +54,15 @@
 
 .dot {
   display: inline-block;
-  height: 7px;
-  width: 7px;
+  height: 5px;
+  width: 5px;
   border-radius: 50%;
   background-color: var(--bg-button-2);
   cursor: pointer;
+  transition: var(--transition-1);
 }
 
 .dot.active {
-  background-color: #ff0000db;
+  background-color: #333;
+  transform: scale(1.2);
 }
