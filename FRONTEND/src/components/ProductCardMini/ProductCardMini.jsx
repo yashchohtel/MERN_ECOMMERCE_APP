@@ -146,3 +146,7 @@ const ProductCardMini = ({ product }) => {
 };
 
 export default ProductCardMini;
+
+
+
+
