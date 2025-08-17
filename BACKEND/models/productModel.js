@@ -24,6 +24,13 @@ const productSchema = new mongoose.Schema({
         maxLength: [8, "price cannot exceed 8 characters"]
     },
 
+    // price
+    OldPrice: {
+        type: Number,
+        required: [true, "Please Enter product Price"],
+        maxLength: [8, "price cannot exceed 8 characters"]
+    },
+
     // person who created the product
     creator: {
         type: mongoose.Schema.Types.ObjectId,

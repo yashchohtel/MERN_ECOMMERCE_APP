@@ -1,14 +1,19 @@
-/* eslint-disable no-unused-vars */
+// /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import './ProductCardMini.css';
 
 const ProductCardMini = ({ product }) => {
 
+    console.log(product);
+
     // state to store index starting from 1 to avoid showing the last image initially
     const [currentIndex, setCurrentIndex] = useState(1);
 
-    // state to control transition animation
+    // state to control transition animati
     const [isTransitioning, setIsTransitioning] = useState(true);
+
+    // state to track hover on product card
+    const [isHovered, setIsHovered] = useState(false);
 
     // numbers of slides for pagination 
     const totalSlides = product.images.length;
@@ -23,25 +28,42 @@ const ProductCardMini = ({ product }) => {
     // active dot index calculation
     const activeDotIndex = (currentIndex - 1 + totalSlides) % totalSlides;
 
-    console.log(activeDotIndex);
-    
+    // function to handle slide change on dot click
     const goToSlide = (dotIndex) => {
         setCurrentIndex(dotIndex + 1);
         setIsTransitioning(true);
     };
 
+    // on mouse enter 
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+        setIsTransitioning(true);
+    };
+
+    // on mouse leave
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+        setCurrentIndex(1);
+        setIsTransitioning(false);
+    };
+
     // Set up interval to change image every 3 seconds
     useEffect(() => {
+
+        if (!isHovered) return;
+
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => prevIndex + 1);
             setIsTransitioning(true);
-        }, 3000);
+        }, 1200);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [isHovered]);
 
     // Handle loop reset
     useEffect(() => {
+
+        if (!isHovered) return;
 
         // for forward looping
         if (currentIndex === images.length - 1) {
@@ -58,12 +80,15 @@ const ProductCardMini = ({ product }) => {
                 setCurrentIndex(images.length - 2); // jump to last real slide
             }, 500);
         }
-    }, [currentIndex, images.length]);
+    }, [currentIndex, images.length, isHovered]);
 
     return (
 
         // product card container
-        <div className="product_card_mini">
+        <div className="product_card_mini"
+            onMouseEnter={() => handleMouseEnter()}
+            onMouseLeave={() => handleMouseLeave()}
+        >
 
             {/* Product image slider */}
             <div className="product_image_slider">
@@ -82,22 +107,38 @@ const ProductCardMini = ({ product }) => {
 
                 </div>
 
-                {/* pagination dots */}
-                <div className="slider_pag_dot">
-                    {Array.from({ length: totalSlides }).map((_, index) => (
-                        <span
-                            key={index}
-                            className={`dot ${activeDotIndex === index ? 'active' : ''}`}
-                            onClick={() => goToSlide(index)}
-                        ></span>
-                    ))}
-                </div>
+            </div>
 
+            {/* pagination dots */}
+            <div className="slider_pag_dot">
+                {Array.from({ length: totalSlides }).map((_, index) => (
+                    <span
+                        key={index}
+                        className={`dot ${activeDotIndex === index ? 'active' : ''}`}
+                        onClick={(e) => {
+                            e.stopPropagation(); // stop event bubbling
+                            goToSlide(index); // change slide on dot click
+                        }}
+
+                    ></span>
+                ))}
             </div>
 
             {/* product details description */}
             <div className="product_description">
-
+                <p className='name'>{product.name}</p>
+                <p className='description'>{product.description}</p>
+                <p className="product_price">
+                    <span className="org_price">₹{product.price}</span>
+                    {product.oldPrice && (
+                        <>
+                            <span className="old_price">₹{product.oldPrice}</span>
+                            <span className="discount">
+                                ({Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}% OFF)
+                            </span>
+                        </>
+                    )}
+                </p>
             </div>
 
         </div>

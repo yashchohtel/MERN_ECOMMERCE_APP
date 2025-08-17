@@ -14,8 +14,9 @@ const products = [
     {
         _id: "1",
         name: "Casual Cotton Shirt",
-        description: "just do it",
+        description: "Soft, breathable cotton shirt – perfect for everyday wear with ultimate comfort.",
         price: 1999,
+        oldPrice: 2499,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 4,
         category: "Clothes",
@@ -32,8 +33,9 @@ const products = [
     {
         _id: "2",
         name: "Wireless Headphones",
-        description: "just do it",
+        description: "Experience crystal clear sound and deep bass with noise cancellation.",
         price: 2499,
+        oldPrice: 3499,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 5,
         category: "Electronics",
@@ -50,8 +52,9 @@ const products = [
     {
         _id: "3",
         name: "Leather Backpack",
-        description: "just do it",
+        description: "Stylish and durable backpack with multiple compartments for daily essentials.",
         price: 3199,
+        oldPrice: 4199,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 3,
         category: "Accessories",
@@ -68,8 +71,9 @@ const products = [
     {
         _id: "4",
         name: "Running Sneakers",
-        description: "just do it",
+        description: "Lightweight sneakers built for speed, grip, and long-lasting comfort.",
         price: 2799,
+        oldPrice: 3599,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 4,
         category: "Shoes",
@@ -86,8 +90,9 @@ const products = [
     {
         _id: "5",
         name: "Smart Watch Pro",
-        description: "just do it",
+        description: "Track fitness, monitor health, and stay connected with style.",
         price: 5599,
+        oldPrice: 6999,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 5,
         category: "Gadgets",
@@ -104,8 +109,9 @@ const products = [
     {
         _id: "6",
         name: "Casual Cotton Shirt",
-        description: "just do it",
+        description: "Classic design cotton shirt – lightweight and easy to style.",
         price: 1999,
+        oldPrice: 2499,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 4,
         category: "Clothes",
@@ -122,8 +128,9 @@ const products = [
     {
         _id: "7",
         name: "Wireless Headphones",
-        description: "just do it",
+        description: "Premium sound with 20-hour battery life and ergonomic comfort fit.",
         price: 2499,
+        oldPrice: 3299,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 5,
         category: "Electronics",
@@ -140,8 +147,9 @@ const products = [
     {
         _id: "8",
         name: "Leather Backpack",
-        description: "just do it",
+        description: "Durable leather finish, perfect for travel, office, or casual outings.",
         price: 3199,
+        oldPrice: 4299,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 3,
         category: "Accessories",
@@ -158,8 +166,9 @@ const products = [
     {
         _id: "9",
         name: "Running Sneakers",
-        description: "just do it",
+        description: "Engineered with breathable mesh and cushioned sole for runners.",
         price: 2799,
+        oldPrice: 3599,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 4,
         category: "Shoes",
@@ -176,8 +185,9 @@ const products = [
     {
         _id: "10",
         name: "Smart Watch Pro",
-        description: "just do it",
+        description: "Advanced smartwatch with AMOLED display, GPS & heart monitoring.",
         price: 5599,
+        oldPrice: 6999,
         creator: "686fd2129b088b4b1257a5e0",
         rating: 5,
         category: "Gadgets",
@@ -191,7 +201,6 @@ const products = [
             { url: "https://mystoreweb.netlify.app/IMAGE/products/featured%20products/sports-2.jpg" },
         ]
     },
-
 ];
 
 const Home = () => {

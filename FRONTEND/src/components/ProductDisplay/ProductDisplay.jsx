@@ -4,9 +4,6 @@ import ProductCardMini from '../ProductCardMini/ProductCardMini';
 
 const ProductDisplay = ({ heading, products }) => {
 
-    console.log(products);
-
-
     return (
         <>
 
