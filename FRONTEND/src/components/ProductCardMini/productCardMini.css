@@ -18,18 +18,21 @@
 
 .product_image_slider {
   width: 100%;
-  height: 20rem;
+  height: 28rem;
   overflow: hidden;
   position: relative;
 }
 
 .slider_track {
   display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .slide {
   min-width: 100%;
-  height: 200px;
+  height: 100%;
+  position: relative;
 }
 
 .slide img {
@@ -38,8 +41,42 @@
   object-fit: contain;
 }
 
-.product_description {
-  height: 10rem;
+/* rating box */
+.product_image_slider .rating-box {
+  position: absolute;
+  left: 5px;
+  bottom: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #ffffffc7;
+  border-radius: 3px;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.product_image_slider .rating-value {
+  color: #000;
+  font-family: var(--font-tertiary);
+}
+
+.product_image_slider .rating-star {
+  color: teal;
+  font-size: 1rem;
+}
+
+.product_image_slider .divider {
+  background: #999999;
+  margin: 0 0.2rem;
+  height: 1.4rem;
+  width: 0.1rem;
+}
+
+.product_image_slider .rating-count {
+  color: #000;
+  font-family: var(--font-tertiary);
 }
 
 /* pagination */
@@ -71,4 +108,61 @@
 .dot.active {
   background-color: #333;
   transform: scale(1.2);
+}
+
+/* description */
+
+.product_description {
+  margin: 0.5rem 0rem 1em 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.product_description .name {
+  font-family: var(--font-tertiary);
+  font-size: 1.5rem;
+  letter-spacing: 0.04rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--color-text-3);
+}
+
+.product_description .description {
+  font-size: 1.3rem;
+  color: #383838;
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 100%;
+}
+
+.product_description .product_price {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  font-family: var(--font-secondary);
+}
+
+.product_description .product_price .org_price,
+.product_description .product_price .old_price,
+.product_description .product_price .discount {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+}
+.product_description .product_price .org_price {
+  color: #e74f4f;
+  font-weight: 600;
+}
+
+.product_description .product_price .old_price {
+  text-decoration: line-through;
+  color: var(--color-text-2);
+}
+
+.product_description .product_price .discount {
+  color: var(--color-text-3);
 }

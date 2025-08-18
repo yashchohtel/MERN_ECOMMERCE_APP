@@ -2,13 +2,16 @@ import React from 'react'
 import './FeaturedProducts.css'
 
 const MiniProductCard = ({ product }) => {
+
+    console.log(product);
+
     return (
         <>
             {/* mini product card */}
             <div className="fps_mini_product_card">
 
                 <div className="img_cont">
-                    <img src={product.image} alt={product.name || "Product"} />
+                    <img src={product.images[0].url} alt={product.name || "Product"} />
                 </div>
 
                 <div className="product_info">

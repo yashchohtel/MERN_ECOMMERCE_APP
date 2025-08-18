@@ -1,5 +1,5 @@
 .product_display_grid{
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(6, 1fr); 
 }

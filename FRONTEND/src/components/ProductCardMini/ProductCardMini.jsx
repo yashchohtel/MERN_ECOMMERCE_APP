@@ -1,10 +1,9 @@
 // /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import './ProductCardMini.css';
+import { FaStar } from 'react-icons/fa';
 
 const ProductCardMini = ({ product }) => {
-
-    console.log(product);
 
     // state to store index starting from 1 to avoid showing the last image initially
     const [currentIndex, setCurrentIndex] = useState(1);
@@ -101,10 +100,22 @@ const ProductCardMini = ({ product }) => {
                 >
                     {images.map((img, index) => (
                         <div className="slide" key={index}>
+
+                            {/* Display image */}
                             <img src={img.url} alt={product.name} />
+
+
                         </div>
                     ))}
 
+                </div>
+
+                {/* Rating box */}
+                <div className="rating-box">
+                    <span className="rating-value">{product.rating}</span>
+                    <FaStar className="rating-star" />
+                    <span className="divider"></span>
+                    <span className="rating-count">{product.numOfReviews}</span>
                 </div>
 
             </div>
@@ -126,7 +137,7 @@ const ProductCardMini = ({ product }) => {
 
             {/* product details description */}
             <div className="product_description">
-                <p className='name'>{product.name}</p>
+                <h3 className='name'>{product.name}</h3>
                 <p className='description'>{product.description}</p>
                 <p className="product_price">
                     <span className="org_price">₹{product.price}</span>
@@ -139,7 +150,13 @@ const ProductCardMini = ({ product }) => {
                         </>
                     )}
                 </p>
-            </div>
+            </div>  
+
+            {/* Add to cart button */}
+            <button className='cart_btn button'>
+                    
+            </button>
+
 
         </div>
     );
