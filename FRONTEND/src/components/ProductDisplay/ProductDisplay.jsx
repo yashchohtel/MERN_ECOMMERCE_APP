@@ -14,13 +14,15 @@ const ProductDisplay = ({ heading, products }) => {
                 <div className="container product_display_container">
 
                     {/* heading */}
-                    <h2 className='heading'>{heading}</h2>
+                    <div className="heading_wrapper">
+                        <h2 className='heading'>{heading}</h2>
+                    </div>
 
                     {/* product cards */}
                     <div className="product_display_grid">
 
-                        {products && products.map((product) => (
-                            <ProductCardMini product={product} />
+                        {products && products.map((product, index) => (
+                            <ProductCardMini product={product} key={index} />
                         ))}
 
                     </div>

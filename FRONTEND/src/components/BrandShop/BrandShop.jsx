@@ -17,7 +17,9 @@ const BrandShop = () => {
                 <div className="container">
 
                     {/* heading */}
-                    <h1 className='heading'>Shop by brands</h1>
+                    <div className="heading_wrapper">
+                        <h1 className='heading'>Shop by brands</h1>
+                    </div>
 
                     {/* brand slider container */}
                     <div className="brand_slide_cont">

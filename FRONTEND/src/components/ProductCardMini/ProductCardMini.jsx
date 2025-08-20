@@ -3,6 +3,10 @@ import React, { useState, useEffect } from 'react';
 import './ProductCardMini.css';
 import { FaStar } from 'react-icons/fa';
 
+import { PiShoppingCartSimpleBold } from "react-icons/pi";
+import { FaRegHeart } from "react-icons/fa6";
+
+
 const ProductCardMini = ({ product }) => {
 
     // state to store index starting from 1 to avoid showing the last image initially
@@ -150,13 +154,22 @@ const ProductCardMini = ({ product }) => {
                         </>
                     )}
                 </p>
-            </div>  
+            </div>
 
             {/* Add to cart button */}
-            <button className='cart_btn button'>
-                    
-            </button>
+            <div className="cart_btn_container">
 
+                {/* cart button */}
+                <button className='cart_btn btn'>
+                    <PiShoppingCartSimpleBold className='btn_icon' /> <span>cart</span>
+                </button>
+
+                {/* wish button */}
+                <button className='wish_btn btn'>
+                    <FaRegHeart className='btn_icon' /> <span>wishlist</span>
+                </button>
+
+            </div>
 
         </div>
     );

@@ -20,7 +20,7 @@
   transform: scale(1.08);
 }
 
-.promotion_banner_container .promotion_banner_content .description {
+.promotion_banner_container .promotion_banner_content .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -29,11 +29,11 @@
   transition: var(--transition-1);
 }
 
-.promotion_banner_container .promotion_banner_content:hover .description {
+.promotion_banner_container .promotion_banner_content:hover .overlay {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.promotion_banner_container .promotion_banner_content .heading {
+.promotion_banner_container .promotion_banner_content .banner_heading {
   position: absolute;
   left: 5%;
   top: 80%;
@@ -42,9 +42,15 @@
   padding: 0.5rem;
   border-radius: 5px;
   transition: var(--transition-1);
+  font-family: var(--font-four);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 0.1rem;
+  font-size: 3rem;
 }
 
-.promotion_banner_container .promotion_banner_content:hover .heading {
+.promotion_banner_container .promotion_banner_content:hover .banner_heading {
   background: #00000080;
 }
 

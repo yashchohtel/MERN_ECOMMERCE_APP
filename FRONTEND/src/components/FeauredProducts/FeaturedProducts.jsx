@@ -10,7 +10,9 @@ const FeaturedProducts = () => {
             <section className="section featuredProductSection">
 
                 {/* section heading */}
-                <h1 className="heading">Featured Products</h1>
+                <div className="heading_wrapper">
+                    <h1 className="heading">Featured Products</h1>
+                </div>
 
                 {/* feature product slide container */}
                 <div className="container featured_product_slide_container">

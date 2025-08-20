@@ -12,7 +12,9 @@ const LatestDrop = () => {
                 <div className="container justDropContainer">
 
                     {/* heading */}
-                    <h2 className='heading'>Latest Drops</h2>
+                    <div className="heading_wrapper">
+                        <h2 className='heading'>Latest Drops</h2>
+                    </div>
 
                     {/* Just Drop Product Container */}
                     <div className="justDropProductContainer">

@@ -11,7 +11,9 @@ const ShopTheHighlights = () => {
                 {/* container */}
                 <div className="container highlight_Section">
 
-                    <h2 className="heading">Shop The Highlights</h2>
+                    <div className="heading_wrapper">
+                        <h2 className="heading">Shop The Highlights</h2>
+                    </div>
 
                     {/* highlight container */}
                     <div className="highlight_content">
