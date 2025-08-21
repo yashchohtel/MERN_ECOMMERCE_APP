@@ -7,12 +7,47 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css/pagination';
 import 'swiper/css';
 
+const bannerData = [
+    {
+        id: 1,
+        tag: "Trending Item",
+        heading: "WOMEN'S LATEST FASHION SALE",
+        description: "starting at $20.00",
+        buttonText: "SHOP NOW",
+        image: "/banner (8).jpg"
+    },
+    {
+        id: 2,
+        tag: "New Collection",
+        heading: "SUMMER EXCLUSIVE DEALS",
+        description: "Flat 40% Off",
+        buttonText: "SHOP NOW",
+        image: "/banner (7).jpg"
+    },
+    {
+        id: 3,
+        tag: "Limited Offer",
+        heading: "MEN'S TRENDY STYLES",
+        description: "starting at $15.00",
+        buttonText: "SHOP NOW",
+        image: "/banner (6).jpg"
+    },
+    {
+        id: 4,
+        tag: "Limited Offer",
+        heading: "MEN'S TRENDY STYLES",
+        description: "starting at $15.00",
+        buttonText: "SHOP NOW",
+        image: "https://img.freepik.com/free-photo/modern-man-casual-outfit-showing-shopping-bag-okay-sign-winking-camera-recommending-shop_1258-300002.jpg?ga=GA1.1.1778038783.1750070552&w=740&q=80"
+    }
+];
+
 const Slider = () => {
 
     return (
         <>
 
-            <div className="hero_slider">
+            <div className="hero_slider_container container">
 
                 <Swiper
                     modules={[Autoplay, Pagination]}
@@ -22,47 +57,28 @@ const Slider = () => {
                     // autoplay={{ delay: 3000 }}
                     pagination={{ clickable: true }}
                 >
-                    {/* {images.map((img, index) => (
-                    <SwiperSlide key={index}>
-                        <div className="img_slide_cont">
-                            <img src={img} alt={`Slide ${index}`} />
-                        </div>
-                    </SwiperSlide>
-                ))} */}
+                    {bannerData.map((item, index) => (
 
-                    <div className="container">
+                        <SwiperSlide key={index}>
 
-                        <SwiperSlide>
+                            {/* slider container */}
                             <div className="img_slide_cont">
-                                <img src="/banner (6).jpg" alt="Slide 3" />
-                            </div>
-                        </SwiperSlide>
 
-                        <SwiperSlide>
-                            <div className="img_slide_cont">
-                                <img src="/banner (7).jpg" alt="Slide 4" />
-                            </div>
-                        </SwiperSlide>
+                                {/* img */}
+                                <img src={item.image} alt={`Slide ${index}`} />
 
-                        <SwiperSlide>
-                            <div className="img_slide_cont">
-                                <img src="/banner (8).jpg" alt="Slide 1" />
-                            </div>
-                        </SwiperSlide>
+                                {/* content */}
+                                <div className="slide_content">
+                                    <span className="tag">{item.tag}</span>
+                                    <h1 className="slider_cont_head">{item.heading}</h1>
+                                    <p className="description">{item.description}</p>
+                                    <button className="btn">{item.buttonText}</button>
+                                </div>
 
-                        <SwiperSlide>
-                            <div className="img_slide_cont">
-                                <img src="/banner (2).jpg" alt="Slide 2" />
                             </div>
-                        </SwiperSlide>
 
-                        <SwiperSlide>
-                            <div className="img_slide_cont">
-                                <img src="/banner (5).jpg" alt="Slide 5" />
-                            </div>
                         </SwiperSlide>
-
-                    </div>
+                    ))}
 
                 </Swiper>
 

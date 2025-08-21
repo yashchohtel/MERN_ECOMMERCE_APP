@@ -1,6 +1,6 @@
 import React from 'react'
 import './footer.css'
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaSearchLocation } from 'react-icons/fa'
 
 const Footer = () => {
     return (
@@ -162,14 +162,13 @@ const Footer = () => {
                             <h3 className="footer-title">CONTACT</h3>
                             <ul className="contact-info">
                                 <li>
-                                    <FaMapMarkerAlt /> 419 State 414 Rte Beaver Dams, New York(NY),
-                                    14812, USA
+                                    <FaSearchLocation  className='footer_icon'/> MUMBAI INDIA
                                 </li>
                                 <li>
-                                    <FaPhoneAlt /> (607) 936-8058
+                                    <FaPhoneAlt className='footer_icon'/> (607) 936-8058
                                 </li>
                                 <li>
-                                    <FaEnvelope /> Example@Gmail.Com
+                                    <FaEnvelope className='footer_icon'/> Example@Gmail.Com
                                 </li>
                             </ul>
 
