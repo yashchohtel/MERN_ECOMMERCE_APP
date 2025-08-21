@@ -4,11 +4,11 @@ import Slider from '../components/Slider/Slider.jsx'
 import BrandShop from '../components/BrandShop/BrandShop'
 import FeaturedProducts from '../components/FeauredProducts/FeaturedProducts.jsx'
 import PromotionBanner from '../components/PromotionBanner/PromotionBanner.jsx'
-import LatestDrop from '../components/LatestDrop/LatestDrop.jsx'
 import DealOfTheDay from '../components/DealOfTheDay/DealOfTheDay.jsx'
 import ShopTheHighlights from '../components/ShopTheHighlights/ShopTheHighlights.jsx'
 import ProductDisplay from '../components/ProductDisplay/ProductDisplay.jsx'
-import OverlayBanner from '../components/OverlayBanner/OverlayBanner.jsx'
+import BlogSection from '../components/BlogSection/BlogSection.jsx'
+import Footer from '../components/Footer/Footer.jsx'
 
 
 const products = [
@@ -741,12 +741,17 @@ const Home = () => {
             {/* product display section (HOME)*/}
             <ProductDisplay heading={"Curated for Your Home"} products={homeProducts} />
 
+            {/* blog section */}
+            <BlogSection/>
+
             {/* brands category */}
             <BrandShop />
 
+            {/* footer section */}
+            <Footer />
+
         </>
     )
-
-}
+};
 
 export default Home;

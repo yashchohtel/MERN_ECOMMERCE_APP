@@ -9,6 +9,8 @@
   --bg-light-4: #f7f7f7;
   --bg-light-5: #e4e4e4;
 
+  --bg-dark-1: #212121;
+
   --bg-button-1: #303030;
   --bg-button-2: #ff80b9;
   --bg-button-3: #f7f7f7;
@@ -23,6 +25,9 @@
   --color-text-4: #454545;
   --color-text-5: #787878;
   --color-text-6: #ffffff;
+  --color-text-7: #999999; 
+  --color-text-8: #ff8f9c; 
+  
 
   --nav-text-color-1: #ee5f73;
   --nav-text-color-2: #fb56c1;
@@ -33,6 +38,7 @@
   /* border color */
   --border-color-light-1: #7171711f;
   --border-color-light-2: #c0c0c0;
+  --border-color-light-3: #454545;
 
   /* box shadow */
   --shadow-1: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -64,7 +70,6 @@ html {
 
 body {
   width: 100%;
-  height: 9000px;
   position: relative;
   font-family: var(--font-tertiary);
 }
