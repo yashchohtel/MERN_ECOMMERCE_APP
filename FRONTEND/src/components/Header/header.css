@@ -143,7 +143,7 @@
 }
 
 .products_detail .img_cont {
-  width: 12rem;
+  width: 10rem;
   height: 7rem;
   display: flex;
   align-items: center;
@@ -163,6 +163,7 @@
   flex-direction: column;
   font-family: var(--font-tertiary);
   gap: 0.4rem;
+  width: 15rem;
 }
 
 .product_info .name {
@@ -170,6 +171,11 @@
   font-weight: 500;
   font-family: var(--font-tertiary);
   color: var(--color-text-3);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .product_info .price {
@@ -209,7 +215,7 @@
 
 .wish_button {
   width: 100%;
-  background: var(--bg-button-1);
+  background: var(--color-text-8);
   padding: 1rem 1rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -223,8 +229,7 @@
 }
 
 .wish_button:hover {
-  background: var(--bg-light-2);
-  color: var(--color-text-3);
+  background-color: var(--bg-button-1);
 }
 
 .product_container::-webkit-scrollbar {

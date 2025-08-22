@@ -3,8 +3,6 @@ import './FeaturedProducts.css'
 
 const MiniProductCard = ({ product }) => {
 
-    console.log(product);
-
     return (
         <>
             {/* mini product card */}

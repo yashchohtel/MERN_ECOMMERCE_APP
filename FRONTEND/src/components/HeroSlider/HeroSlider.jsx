@@ -1,5 +1,5 @@
 import React from 'react';
-import "./slider.css";
+import "./heroSlider.css";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -30,25 +30,29 @@ const bannerData = [
         heading: "MEN'S TRENDY STYLES",
         description: "starting at $15.00",
         buttonText: "SHOP NOW",
-        image: "/banner (6).jpg"
+        image: "/banner (10).png"
     },
     {
-        id: 4,
+        id: 3,
         tag: "Limited Offer",
         heading: "MEN'S TRENDY STYLES",
         description: "starting at $15.00",
         buttonText: "SHOP NOW",
-        image: "https://img.freepik.com/free-photo/modern-man-casual-outfit-showing-shopping-bag-okay-sign-winking-camera-recommending-shop_1258-300002.jpg?ga=GA1.1.1778038783.1750070552&w=740&q=80"
+        image: "/banner (6).jpg"
+    },
+    {
+        id: 4,
+        // sirf image aayega (baaki sab backend se empty hoga)
+        image: "/banner (9).png"
     }
 ];
 
-const Slider = () => {
+const HeroSlider = () => {
 
     return (
         <>
 
             <div className="hero_slider_container container">
-
                 <Swiper
                     modules={[Autoplay, Pagination]}
                     spaceBetween={30}
@@ -67,24 +71,24 @@ const Slider = () => {
                                 {/* img */}
                                 <img src={item.image} alt={`Slide ${index}`} />
 
-                                {/* content */}
-                                <div className="slide_content">
-                                    <span className="tag">{item.tag}</span>
-                                    <h1 className="slider_cont_head">{item.heading}</h1>
-                                    <p className="description">{item.description}</p>
-                                    <button className="btn">{item.buttonText}</button>
-                                </div>
+                                {/* content (sirf tab render hoga jab data hoga) */}
+                                {(item.tag || item.heading || item.description || item.buttonText) && (
+                                    <div className="slide_content">
+                                        {item.tag && <span className="tag">{item.tag}</span>}
+                                        {item.heading && <h1 className="slider_cont_head">{item.heading}</h1>}
+                                        {item.description && <p className="description">{item.description}</p>}
+                                        {item.buttonText && <button className="btn">{item.buttonText}</button>}
+                                    </div>
+                                )}
 
                             </div>
 
                         </SwiperSlide>
                     ))}
-
                 </Swiper>
-
             </div>
         </>
     )
 }
 
-export default Slider;
+export default HeroSlider;

@@ -33,7 +33,7 @@
 .slide_content .tag {
   color: var(--color-text-8);
   font-size: 3rem;
-  font-family: var(--font-secondary);
+  font-family: var(--font-tertiary);
   text-transform: capitalize;
   font-weight: 600;
   letter-spacing: 0.05rem;

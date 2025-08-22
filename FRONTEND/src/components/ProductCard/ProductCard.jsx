@@ -1,13 +1,12 @@
 // /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import './ProductCardMini.css';
+import './productCard.css';
 import { FaStar } from 'react-icons/fa';
-
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 import { FaRegHeart } from "react-icons/fa6";
 
 
-const ProductCardMini = ({ product }) => {
+const ProductCard = ({ product }) => {
 
     // state to store index starting from 1 to avoid showing the last image initially
     const [currentIndex, setCurrentIndex] = useState(1);
@@ -175,7 +174,7 @@ const ProductCardMini = ({ product }) => {
     );
 };
 
-export default ProductCardMini;
+export default ProductCard;
 
 
 

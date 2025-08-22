@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../components/Header/Header.jsx'
-import Slider from '../components/Slider/Slider.jsx'
 import BrandShop from '../components/BrandShop/BrandShop'
 import FeaturedProducts from '../components/FeauredProducts/FeaturedProducts.jsx'
 import PromotionBanner from '../components/PromotionBanner/PromotionBanner.jsx'
@@ -9,6 +8,7 @@ import ShopTheHighlights from '../components/ShopTheHighlights/ShopTheHighlights
 import ProductDisplay from '../components/ProductDisplay/ProductDisplay.jsx'
 import BlogSection from '../components/BlogSection/BlogSection.jsx'
 import Footer from '../components/Footer/Footer.jsx'
+import HeroSlider from '../components/HeroSlider/HeroSlider.jsx'
 
 
 const products = [
@@ -718,7 +718,7 @@ const Home = () => {
             <Header />
 
             {/* slider component */}
-            <Slider />
+            <HeroSlider />
 
             {/* featured products */}
             <FeaturedProducts />

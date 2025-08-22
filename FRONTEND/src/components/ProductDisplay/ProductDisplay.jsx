@@ -1,6 +1,6 @@
 import React from 'react'
 import './productDisplay.css';
-import ProductCardMini from '../ProductCardMini/ProductCardMini';
+import ProductCard from '../ProductCard/ProductCard';
 
 const ProductDisplay = ({ heading, products }) => {
 
@@ -22,7 +22,7 @@ const ProductDisplay = ({ heading, products }) => {
                     <div className="product_display_grid">
 
                         {products && products.map((product, index) => (
-                            <ProductCardMini product={product} key={index} />
+                            <ProductCard product={product} key={index} />
                         ))}
 
                     </div>
