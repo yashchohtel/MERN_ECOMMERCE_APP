@@ -7,9 +7,8 @@ import Searchbar from '../SearchBar/Searchbar'
 import { IoBagHandleOutline, IoBagHandleSharp } from "react-icons/io5";
 import { RiUser6Line, RiUser6Fill } from "react-icons/ri";
 import { GoHeart, GoHeartFill } from "react-icons/go";
-import { FaStar } from "react-icons/fa";
+import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
-
 
 const products = [
     {
@@ -19,7 +18,7 @@ const products = [
         price: 1999,
         oldPrice: 2499,
         creator: "686fd2129b088b4b1257a5e0",
-        rating: 4,
+        rating: 2,
         category: "Clothes",
         stock: 100,
         numOfReviews: 3,
@@ -100,7 +99,7 @@ const products = [
         price: 5599,
         oldPrice: 6999,
         creator: "686fd2129b088b4b1257a5e0",
-        rating: 5,
+        rating: 3.7,
         category: "Gadgets",
         stock: 70,
         numOfReviews: 6,
@@ -119,7 +118,7 @@ const products = [
         price: 1999,
         oldPrice: 2499,
         creator: "686fd2129b088b4b1257a5e0",
-        rating: 4,
+        rating: 4.5,
         category: "Clothes",
         stock: 100,
         numOfReviews: 3,
@@ -138,7 +137,7 @@ const products = [
         price: 2499,
         oldPrice: 3299,
         creator: "686fd2129b088b4b1257a5e0",
-        rating: 5,
+        rating: 3.2,
         category: "Electronics",
         stock: 80,
         numOfReviews: 5,
@@ -199,29 +198,41 @@ const Header = () => {
                                 {/* product container */}
                                 <div className="product_container">
 
-                                    {products.map((product, index) => (
+                                    {products.map((product, index) => {
 
-                                        <div className="products_detail" key={index}>
+                                        const fullStars = Math.floor(product.rating);
+                                        const halfStar = product.rating - fullStars;
+                                        const emptyStars = 5 - (fullStars + (halfStar > 0 ? 1 : 0));
 
-                                            <div className="img_cont">
-                                                <img src={product.images[0].url} alt="" />
+                                        return (
+                                            <div className="products_detail" key={index}>
+
+                                                <div className="img_cont">
+                                                    <img src={product.images[0].url} alt="" />
+                                                </div>
+
+                                                <div className="product_info">
+                                                    <span className='name'>{product.name}</span>
+                                                    <span className='price'>₹ {product.price}</span>
+                                                    <span className="rating">
+
+                                                        {Array(fullStars).fill().map((_, i) => <FaStar key={i} />)}
+                                                        {
+                                                            halfStar === 0 ? null                              // bilkul decimal nahi hai
+                                                                :
+                                                                halfStar < 0.5 ? <FaRegStar key="half-empty" />  // 0 < decimal < 0.5
+                                                                    :
+                                                                    <FaStarHalfAlt key="half" />    // decimal >= 0.5
+                                                        }
+                                                        {Array(emptyStars).fill().map((_, i) => <FaRegStar key={i} />)}
+
+                                                    </span>
+                                                </div>
+
                                             </div>
+                                        )
 
-                                            <div className="product_info">
-                                                <span className='name'>{product.name}</span>
-                                                <span className='price'>₹ {product.price}</span>
-                                                <span className="rating">
-                                                    <FaStar />
-                                                    <FaStar />
-                                                    <FaStar />
-                                                    <FaStar />
-                                                    <FaStarHalf />
-                                                </span>
-                                            </div>
-
-                                        </div>
-
-                                    ))}
+                                    })}
 
                                 </div>
 
