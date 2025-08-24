@@ -217,13 +217,7 @@ const Header = () => {
                                                     <span className="rating">
 
                                                         {Array(fullStars).fill().map((_, i) => <FaStar key={i} />)}
-                                                        {
-                                                            halfStar === 0 ? null                              // bilkul decimal nahi hai
-                                                                :
-                                                                halfStar < 0.5 ? <FaRegStar key="half-empty" />  // 0 < decimal < 0.5
-                                                                    :
-                                                                    <FaStarHalfAlt key="half" />    // decimal >= 0.5
-                                                        }
+                                                        {halfStar === 0 ? null : halfStar < 0.5 ? <FaRegStar key="half-empty" /> : <FaStarHalfAlt key="half" />}
                                                         {Array(emptyStars).fill().map((_, i) => <FaRegStar key={i} />)}
 
                                                     </span>
@@ -263,29 +257,35 @@ const Header = () => {
                                 {/* product container */}
                                 <div className="product_container">
 
-                                    {products.map((product, index) => (
+                                    {products.map((product, index) => {
 
-                                        <div className="products_detail" key={index}>
+                                        const fullStars = Math.floor(product.rating);
+                                        const halfStar = product.rating - fullStars;
+                                        const emptyStars = 5 - (fullStars + (halfStar > 0 ? 1 : 0));
 
-                                            <div className="img_cont">
-                                                <img src={product.images[0].url} alt="" />
+                                        return (
+                                            <div className="products_detail" key={index}>
+
+                                                <div className="img_cont">
+                                                    <img src={product.images[0].url} alt="" />
+                                                </div>
+
+                                                <div className="product_info">
+                                                    <span className='name'>{product.name}</span>
+                                                    <span className='price'>₹ {product.price}</span>
+                                                    <span className="rating">
+
+                                                        {Array(fullStars).fill().map((_, i) => <FaStar key={i} />)}
+                                                        {halfStar === 0 ? null : halfStar < 0.5 ? <FaRegStar key="half-empty" /> : <FaStarHalfAlt key="half" />}
+                                                        {Array(emptyStars).fill().map((_, i) => <FaRegStar key={i} />)}
+
+                                                    </span>
+                                                </div>
+
                                             </div>
+                                        )
 
-                                            <div className="product_info">
-                                                <span className='name'>{product.name}</span>
-                                                <span className='price'>₹ {product.price}</span>
-                                                <span className="rating">
-                                                    <FaStar />
-                                                    <FaStar />
-                                                    <FaStar />
-                                                    <FaStar />
-                                                    <FaStarHalf />
-                                                </span>
-                                            </div>
-
-                                        </div>
-
-                                    ))}
+                                    })}
 
                                 </div>
 
