@@ -714,8 +714,6 @@ const Home = () => {
     return (
 
         <>
-            {/* header component */}
-            <Header />
 
             {/* slider component */}
             <HeroSlider />
@@ -742,13 +740,10 @@ const Home = () => {
             <ProductDisplay heading={"Curated for Your Home"} products={homeProducts} />
 
             {/* blog section */}
-            <BlogSection/>
+            <BlogSection />
 
             {/* brands category */}
             <BrandShop />
-
-            {/* footer section */}
-            <Footer />
 
         </>
     )

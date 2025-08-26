@@ -9,6 +9,22 @@ import 'swiper/css';
 
 const bannerData = [
     {
+        id: 3,
+        tag: "Limited Offer",
+        heading: "MEN'S TRENDY STYLES",
+        description: "starting at $15.00",
+        buttonText: "SHOP NOW",
+        image: "/banner (10).png"
+    },
+    {
+        id: 4,
+        tag: "Limited Offer",
+        heading: "Latest Tech For You",
+        description: "starting at $15.00",
+        buttonText: "SHOP NOW",
+        image: "/banner (11).png"
+    },
+    {
         id: 1,
         tag: "Trending Item",
         heading: "WOMEN'S LATEST FASHION SALE",
@@ -30,18 +46,10 @@ const bannerData = [
         heading: "MEN'S TRENDY STYLES",
         description: "starting at $15.00",
         buttonText: "SHOP NOW",
-        image: "/banner (10).png"
-    },
-    {
-        id: 3,
-        tag: "Limited Offer",
-        heading: "MEN'S TRENDY STYLES",
-        description: "starting at $15.00",
-        buttonText: "SHOP NOW",
         image: "/banner (6).jpg"
     },
     {
-        id: 4,
+        id: 5,
         // sirf image aayega (baaki sab backend se empty hoga)
         image: "/banner (9).png"
     }
