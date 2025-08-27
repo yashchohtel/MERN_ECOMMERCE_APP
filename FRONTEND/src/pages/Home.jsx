@@ -10,7 +10,6 @@ import BlogSection from '../components/BlogSection/BlogSection.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 import HeroSlider from '../components/HeroSlider/HeroSlider.jsx'
 
-
 const products = [
     {
         _id: "1",
