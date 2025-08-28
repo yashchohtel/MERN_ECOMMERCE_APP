@@ -122,4 +122,4 @@ productSchema.methods.updateStock = async function (quantity) {
 const Products = mongoose.model("Products", productSchema);
 
 // Export the products model
-export default Products;
+export default Products;``

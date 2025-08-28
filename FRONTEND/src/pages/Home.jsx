@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../components/Header/Header.jsx'
 import BrandShop from '../components/BrandShop/BrandShop'
 import FeaturedProducts from '../components/FeauredProducts/FeaturedProducts.jsx'
 import PromotionBanner from '../components/PromotionBanner/PromotionBanner.jsx'
@@ -7,7 +6,6 @@ import DealOfTheDay from '../components/DealOfTheDay/DealOfTheDay.jsx'
 import ShopTheHighlights from '../components/ShopTheHighlights/ShopTheHighlights.jsx'
 import ProductDisplay from '../components/ProductDisplay/ProductDisplay.jsx'
 import BlogSection from '../components/BlogSection/BlogSection.jsx'
-import Footer from '../components/Footer/Footer.jsx'
 import HeroSlider from '../components/HeroSlider/HeroSlider.jsx'
 
 const products = [
