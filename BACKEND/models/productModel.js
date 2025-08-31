@@ -1,6 +1,9 @@
 import mongoose from "mongoose"; // Import mongoose
 import ErrorHandler from "../utils/errorHandler.js"; // Import ErrorHandler utility
 
+
+
+
 // product schema
 const productSchema = new mongoose.Schema({
 
